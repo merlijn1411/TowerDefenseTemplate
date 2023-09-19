@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
+  - WayPoints
+  - Projectile
+  - BuildPlatform
+  - ShopInteractable
+  - AcherT
+  - WizardT
   layers:
   - Default
   - TransparentFX
@@ -11,13 +18,13 @@ TagManager:
   - 
   - Water
   - UI
+  - Platforms
   - 
   - 
+  - Enemy
   - 
-  - 
-  - 
-  - 
-  - 
+  - UIButtonLayer
+  - Arrow
   - 
   - 
   - Background
