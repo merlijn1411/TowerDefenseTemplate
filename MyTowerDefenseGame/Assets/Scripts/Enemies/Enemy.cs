@@ -1,18 +1,20 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.UIElements;
 using UnityEngine;
+using UnityEngine.Scripting.APIUpdating;
+using UnityEngine.UIElements;
 
 public class Enemy : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public float MoveSpeed;
+
+    public Transform target;
+
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        target = GetComponent<Transform>();
+        target.position = transform.position;
     }
 }
