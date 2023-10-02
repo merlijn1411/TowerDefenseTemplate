@@ -34,17 +34,15 @@ public class WaveSpawner : MonoBehaviour
 
     private int nextWave = 0;
 
-    public float timeBetweenWaves = 5f;
+    public float timeBetweenWaves;
 
     public float waveCountdown;
 
-    private float searchTimer = 1f;
+    private float searchTimer ;
 
     private SpawnState state = SpawnState.COUNTING; // !! wanneer het script eerst word initialized van dat het gestopt is met tellen. zo dat ik weet dat alles zal werken.
 
-    Boolean repeat;
 
-    Enum Stop;
     void Start()
     {
         waveCountdown = timeBetweenWaves;    
@@ -78,7 +76,6 @@ public class WaveSpawner : MonoBehaviour
 
     void beginNewRound()
     {
-        Debug.Log("Wave Completed");
 
         state = SpawnState.COUNTING;
         waveCountdown = timeBetweenWaves;

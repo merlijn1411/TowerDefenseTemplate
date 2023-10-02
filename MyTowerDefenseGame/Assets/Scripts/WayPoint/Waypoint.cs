@@ -4,51 +4,35 @@ using UnityEngine;
 
 public class Waypoint : MonoBehaviour
 {
-    //samenvatting in dit script kunnen we aangeven hoeveel waipoints we willen zetten en de waypoint kunnen zien via gizmos. 
-
-    [SerializeField] private Vector3[] WayPoints;
-
-    public Vector3[] Points => WayPoints;
-
-    public Vector3 CurrentPosition => _currentPosition;
-
-    private Vector3 _currentPosition;
-    private bool _gameStarted;
-
-    private void Start()
+    public Vector3[] Waypoints;
+    
+    public Vector3 GetWaypointPosition(int index)
     {
-        _gameStarted = true;
-        _currentPosition = transform.position;
-    }
-
-    public Vector3 GetWaypointsPosition(int index)
-    {
-        return CurrentPosition + Points[index];
+        if (index >= 0 && index < Waypoints.Length)
+        {
+            return transform.position + Waypoints[index];
+        }
+        else
+        {
+            Debug.LogWarning("geen waypoint detected");
+            return Vector3.zero;
+        }
     }
 
     private void OnDrawGizmos()
-    { 
-        if (!_gameStarted && transform.hasChanged)
+    {
+        for (int i = 0; i < Waypoints.Length; i++)
         {
-            _currentPosition = transform.position;
-        }
-
-        for (int i = 0; i < WayPoints.Length; i++)
-        {
-            //dt maakt een zwarte sphere precies op de waipoints 
+            // Draw a sphere at each waypoint's position
             Gizmos.color = Color.black;
-            Gizmos.DrawWireSphere(WayPoints[i] + _currentPosition, 0.5f);
+            Gizmos.DrawWireSphere(transform.position + Waypoints[i], 0.5f);
 
-            if(i < WayPoints.Length - 1)
+            if (i < Waypoints.Length - 1)
             {
-                //dit laat een lijn zien van de ene waypoint naar de andere 
+                // Draw a line between waypoints
                 Gizmos.color = Color.gray;
-                Gizmos.DrawLine(WayPoints[i] + _currentPosition, WayPoints[i + 1] + _currentPosition);
+                Gizmos.DrawLine(transform.position + Waypoints[i], transform.position + Waypoints[i + 1]);
             }
         }
-    }
-    public Vector3[] getWaypoints()
-    {
-        return Points;
     }
 }

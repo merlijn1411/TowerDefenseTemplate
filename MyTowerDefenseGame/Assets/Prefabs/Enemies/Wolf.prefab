@@ -43,7 +43,9 @@ GameObject:
   - component: {fileID: 3792893032710634365}
   - component: {fileID: 3792893032710634363}
   - component: {fileID: 3792893032710634362}
-  - component: {fileID: 3792893032710634361}
+  - component: {fileID: 3197066370474490448}
+  - component: {fileID: -958136032098002905}
+  - component: {fileID: -5842861267362025477}
   m_Layer: 0
   m_Name: Wolf
   m_TagString: Enemy
@@ -156,7 +158,46 @@ MonoBehaviour:
   barPosition: {fileID: 3792893032310680920}
   initiaHealth: 0
   maxHealth: 10
---- !u!114 &3792893032710634361
+--- !u!114 &3197066370474490448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3792893032710634366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8642c7f73c5b0b9418398abe86d13834, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoveSpeed: 5
+--- !u!61 &-958136032098002905
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3792893032710634366}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.2, y: 1.2}
+    newSize: {x: 1.2, y: 1.2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.2, y: 1.2}
+  m_EdgeRadius: 0
+--- !u!114 &-5842861267362025477
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -168,5 +209,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c63e7602bc696b4286fb0d918c8a9a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 2
-  Waypoint: {fileID: 0}
