@@ -1,133 +1,83 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.Serialization;
 using UnityEngine;
-using UnityEngine.VFX;
+using UnityEngine.Events;
 
 public class WaveSpawner : MonoBehaviour
 {
-    public enum SpawnState { SPAWNING, WAITING, COUNTING };
-    [System.Serializable]
+    [SerializeField] private GameObject[] enemyPrefabs;
 
-    public class Wave
-    {
+    [SerializeField] private int BaseEnemies;
+    [SerializeField] private float enemiesPerSecond;
+    [SerializeField] private float timeBetweenWaves;
+    [SerializeField] private float difficultyScalingFactor = 0.75f;
 
-        public string name;
+    private int currentWave = 1;
+    private float TimeSinceLastSpawn;
+    private int enemiesAlive;
+    private int enemiesLeftToSpawn;
+    private bool isSpawning = false;
 
-        public Enemy[] enemies;
+    public static UnityEvent onEnemyDestroy = new UnityEvent();
 
-
-    }
-    [System.Serializable]
-
-    public class Enemy
-    {
-        public Transform enemyTransform;
-
-        public int count;
-
-        public float rate;
+    private void Awake()
+    {   
+        onEnemyDestroy.AddListener(EnemyDestroyed);
     }
 
-    public Wave[] waves;
-
-    private int nextWave = 0;
-
-    public float timeBetweenWaves;
-
-    public float waveCountdown;
-
-    private float searchTimer ;
-
-    private SpawnState state = SpawnState.COUNTING; // !! wanneer het script eerst word initialized van dat het gestopt is met tellen. zo dat ik weet dat alles zal werken.
-
-
-    void Start()
+    private void Start()
     {
-        waveCountdown = timeBetweenWaves;    
+       StartCoroutine(StartWave());
     }
 
-    void Update()
+    private void Update()
     {
-        if(state == SpawnState.WAITING)
+        if (!isSpawning) return;
+
+        TimeSinceLastSpawn += Time.deltaTime;    
+        
+        if(TimeSinceLastSpawn >= (1f / enemiesPerSecond) && enemiesLeftToSpawn > 0)
         {
-            if (!EnemyIsAlive())
-            {
-                beginNewRound();
-            }
-            else
-            {
-                return;
-            }
+            SpawnEnemy();
+            TimeSinceLastSpawn = 0f;
         }
-        if(waveCountdown <= 0)
+
+        if(enemiesAlive == 0 && enemiesLeftToSpawn == 0)
         {
-            if(state != SpawnState.SPAWNING)
-            {
-                StartCoroutine(SpawnWave(waves[nextWave]));  
-            }
-        }
-        else
-        {
-            waveCountdown -= Time.deltaTime;
+            EndWave();
         }
     }
 
-    void beginNewRound()
+    private void EnemyDestroyed()
     {
+        Destroy(gameObject);
+    } 
 
-        state = SpawnState.COUNTING;
-        waveCountdown = timeBetweenWaves;
-
-        if(nextWave + 1 > waves.Length - 1)
-        {
-            nextWave = 0;
-            Debug.Log("Wave completed");
-        }
-        else
-        {
-            nextWave++;
-        }
-    }
-    bool EnemyIsAlive()
+    private IEnumerator StartWave()
     {
-        searchTimer -= Time.deltaTime;
-        if(searchTimer <= 0f)
-        {
-            searchTimer = 1f;
-            if(GameObject.FindGameObjectWithTag("Enemy") == null)
-            {
-                return false;
-            }
-        }
-
-        return false;
+        yield return new WaitForSeconds(timeBetweenWaves);
+        isSpawning = true;
+        enemiesLeftToSpawn = EnemiesPerWave();
+        
     }
 
-    IEnumerator SpawnWave(Wave _wave)
+    private void EndWave()
     {
-        Debug.Log("spawning wave:" +  _wave);
-        state = SpawnState.SPAWNING;
-
-        for(int i = 0; i < _wave.enemies.Length; i++) 
-        {
-            var temp = _wave.enemies[i];
-            for(int j = 0; j < temp.count; j++)
-            {
-                SpawnEnemy(temp.enemyTransform);
-                yield return new WaitForSeconds(1f/temp.rate);
-            }
-        }
-
-        state = SpawnState.WAITING;
-
-        yield break;
+        isSpawning = false;
+        TimeSinceLastSpawn = 0f;
+        StartCoroutine(StartWave());
     }
 
-    void SpawnEnemy(Transform _enemy)
+    private void SpawnEnemy()
     {
-        Instantiate(_enemy, transform.position, transform.rotation);
-        Debug.Log("spawning enemy" +_enemy);
+        GameObject prefabToSpawn = enemyPrefabs[0];
+        Instantiate(prefabToSpawn, Waypoint.main.startPoint.position, Quaternion.identity);
+    }
+
+    private int EnemiesPerWave()
+    {
+        return Mathf.RoundToInt(BaseEnemies * Mathf.Pow(currentWave, difficultyScalingFactor));
     }
 }
+

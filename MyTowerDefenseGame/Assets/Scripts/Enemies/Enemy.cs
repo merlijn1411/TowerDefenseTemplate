@@ -1,13 +1,21 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using UnityEditor.UIElements;
 using UnityEngine;
-using UnityEngine.Scripting.APIUpdating;
-using UnityEngine.UIElements;
 
 public class Enemy : MonoBehaviour
 {
+    public int Damage;
+    public int Worth;
 
+    public void MyWallet()
+    {
+        PlayerStats.Money += Worth;
+        Destroy(gameObject);
+    }
+
+    public void TakeDamage()
+    {
+        PlayerStats.lives -= Damage;
+        Destroy(gameObject);
+    }
 }

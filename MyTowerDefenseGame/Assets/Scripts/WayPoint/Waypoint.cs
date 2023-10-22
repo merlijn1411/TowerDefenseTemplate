@@ -5,7 +5,16 @@ using UnityEngine;
 public class Waypoint : MonoBehaviour
 {
     public Vector3[] Waypoints;
-    
+
+    public Transform startPoint;
+
+    public static Waypoint main;
+
+    private void Awake()
+    {
+        main = this;    
+    }
+
     public Vector3 GetWaypointPosition(int index)
     {
         if (index >= 0 && index < Waypoints.Length)
@@ -23,13 +32,11 @@ public class Waypoint : MonoBehaviour
     {
         for (int i = 0; i < Waypoints.Length; i++)
         {
-            // Draw a sphere at each waypoint's position
             Gizmos.color = Color.black;
             Gizmos.DrawWireSphere(transform.position + Waypoints[i], 0.5f);
 
             if (i < Waypoints.Length - 1)
             {
-                // Draw a line between waypoints
                 Gizmos.color = Color.gray;
                 Gizmos.DrawLine(transform.position + Waypoints[i], transform.position + Waypoints[i + 1]);
             }

@@ -1,14 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Drawing;
-using System.IO;
-using System.Linq;
 using Unity.VisualScripting;
 using UnityEditor.Animations;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using UnityEngine.Pool;
-using UnityEngine.UIElements;
 
 public class EnemyMovement : MonoBehaviour
 {
@@ -31,7 +25,7 @@ public class EnemyMovement : MonoBehaviour
 
         if (waypointManager == null)
         {
-            Debug.LogError("WaypointManager not found in the scene.");
+            Debug.LogError("Waypoint Script not found in the scene.");
         }
     }
 
@@ -57,31 +51,9 @@ public class EnemyMovement : MonoBehaviour
         if (distanceToNextpointPosition < 0.1f)
         {
             CurrentPointPosition = transform.position;
-            ChangeAnimation();
             return true;
         }
         return false;
-    }
-
-    private void ChangeAnimation()
-    {
-        Vector2 moveDirection = (CurrentPointPosition - transform.position.normalized);
-
-        float horizontalInput = 0f;
-
-        if (Mathf.Approximately(moveDirection.x, 1.0f))
-        {
-            
-            horizontalInput = 1f;
-        }
-        else if (Mathf.Approximately(moveDirection.x, -1.0f))
-        {
-            
-            horizontalInput = -1f;
-        }
-
-        
-        anim.SetFloat("Horizontal", horizontalInput);
     }
 
     private void UpdateCurrentPointIndex()
@@ -93,12 +65,19 @@ public class EnemyMovement : MonoBehaviour
         }
         else
         {
+            Destroy(gameObject);
             EndPointReached();
         }
     }
 
     private void EndPointReached()
     {
-        Destroy(gameObject);
+        Enemy enemyDamage = GetComponent<Enemy>();
+
+        if(enemyDamage != null)
+        {
+            enemyDamage.TakeDamage();
+        }
+        
     }
 }

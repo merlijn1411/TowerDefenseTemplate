@@ -9,15 +9,11 @@ public class PlayerStats : MonoBehaviour
 
     public static int lives;
     public int startLives = 20;
+
     void Start()
     {
         Money = startMoney;
-        lives = startLives; 
-    }
+        lives = startLives;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

@@ -1,60 +1,33 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
 {
-    /*/
-    public static Action<Enemy> OnEnemyKilled;
-    public static Action<Enemy> OnEnemyHit;
-    /*/
+    public float maxHealth = 100;
+    public float CurrentHealth;
 
-    [SerializeField] private GameObject HealthBarPrefab;
-    [SerializeField] private Transform barPosition;
-    [SerializeField] private float initiaHealth;
-    [SerializeField] private float maxHealth;
+    public Image HealthBar;
 
-    public float CurrenHealth { get; set; }
-
-    private Image _healthBar;
-    private EnemyHealth _enemy;
     void Start()
     {
-        CreateHealthBar();
-        CurrenHealth = initiaHealth;
-
+        CurrentHealth = maxHealth;
     }
 
-    void Update()
+    public void TakeDamage(float dmg)
     {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            DealDamage(5f);
-        }
-        _healthBar.fillAmount = Mathf.Lerp(_healthBar.fillAmount, CurrenHealth / maxHealth, Time.deltaTime * 10f);
-    }
+        CurrentHealth -= dmg;
 
-    private void CreateHealthBar()
-    {
-        GameObject newHealthbar = Instantiate(HealthBarPrefab, barPosition.position, Quaternion.identity);
-        newHealthbar.transform.SetParent(transform);
-        EnemyHealthContainer container = newHealthbar.GetComponent<EnemyHealthContainer>();
-        _healthBar = container.FillAmountImage;
-    }
+        HealthBar.fillAmount = CurrentHealth / maxHealth;
 
-    public void DealDamage(float damageReceived)
-    {
-        CurrenHealth -= damageReceived;
-        if (CurrenHealth < 0)
+        Enemy EnemyPocket = GetComponent<Enemy>();
+
+        if (CurrentHealth <= 0) 
         {
-            CurrenHealth = 0;
-            
-        }
-        else
-        {
-            
+            EnemyPocket.MyWallet();
         }
     }
 }

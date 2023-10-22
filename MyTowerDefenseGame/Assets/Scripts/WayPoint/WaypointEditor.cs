@@ -6,7 +6,7 @@ using UnityEngine;
 [CustomEditor(typeof(Waypoint))]
 
 public class WaypointEditor : Editor
-{
+{   
     private Waypoint Waypoint => target as Waypoint;
 
     private void OnSceneGUI()
