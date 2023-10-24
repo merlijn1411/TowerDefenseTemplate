@@ -44,7 +44,6 @@ GameObject:
   - component: {fileID: 1209419620768415092}
   - component: {fileID: 1209419620768415093}
   - component: {fileID: 1209419620768415098}
-  - component: {fileID: 1209419621734578917}
   m_Layer: 0
   m_Name: Tower_Wizard
   m_TagString: WizardT
@@ -116,7 +115,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 1160944919, guid: 754409689444222408325c36e3898c09, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -144,20 +143,6 @@ MonoBehaviour:
   attackCooldown: 2
   FireBallPrefab: {fileID: 2126777522699652849, guid: 8e23c8a6abe6d134c83048555363f98a, type: 3}
   firePoint: {fileID: 1209419621122988147}
---- !u!114 &1209419621734578917
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1209419620768415094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83c9abb5072cfe44e9134c9075fd9db5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towers: []
-  towerCosts: 
 --- !u!1 &1209419621122988143
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,7 +216,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 15bb71fed21f061488d6bcc629be9779, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

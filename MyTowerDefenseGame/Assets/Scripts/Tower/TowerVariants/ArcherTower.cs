@@ -50,7 +50,7 @@ public class ArcherTower : MonoBehaviour
             }
         }
 
-        if (nearestEnemy != null && shortestDistance <= attackRange)
+        if(nearestEnemy != null && shortestDistance <= attackRange)
         {
             target = nearestEnemy;
         }
@@ -58,6 +58,7 @@ public class ArcherTower : MonoBehaviour
         {
             target = null;
         }
+
     }
 
     void Shoot()

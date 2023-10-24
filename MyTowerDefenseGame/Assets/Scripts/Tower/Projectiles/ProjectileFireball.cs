@@ -21,6 +21,11 @@ public class ProjectileFireball : MonoBehaviour
 
         Vector2 direction = (target.position - transform.position).normalized;
         transform.Translate(direction * speed * Time.deltaTime);
+
+        if(target == null)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

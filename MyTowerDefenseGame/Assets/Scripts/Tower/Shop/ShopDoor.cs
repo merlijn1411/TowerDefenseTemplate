@@ -9,7 +9,7 @@ using System;
 
 public class ShopDoor : MonoBehaviour
 {
-    private GameObject shopCanvas;
+    public Canvas shopCanvas;
     public GameObject uiPrefab;
 
     private bool isShopOpen;
@@ -19,6 +19,7 @@ public class ShopDoor : MonoBehaviour
 
     void Start()
     {
+        shopCanvas.enabled = false;
         isShopOpen = false;
         _renderer = GetComponent<Renderer>();
     }
@@ -55,18 +56,18 @@ public class ShopDoor : MonoBehaviour
     void OpensHop()
     {
         isShopOpen = true;
-
-        shopCanvas = Instantiate(uiPrefab, transform.position, Quaternion.identity);
+        shopCanvas.enabled = true;
+        //shopCanvas = Instantiate(uiPrefab, transform.position, Quaternion.identity);
     }
 
     void CloseShop()
     {
         isShopOpen = false;
-
-        if (shopCanvas != null)
-        {
-            Destroy(shopCanvas);
-        }
+        shopCanvas.enabled = false;
+        //if (shopCanvas != null)
+        //{
+        //    Destroy(shopCanvas);
+        //}
     }
 
     void OnMouseEnter()

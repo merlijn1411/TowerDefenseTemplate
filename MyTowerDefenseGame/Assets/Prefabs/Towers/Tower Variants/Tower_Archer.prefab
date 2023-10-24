@@ -104,7 +104,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: -609802694, guid: e6cb62169fbe9cf42b703ad0139aba49, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -127,7 +127,6 @@ GameObject:
   - component: {fileID: 341451224905261327}
   - component: {fileID: 341451224905261312}
   - component: {fileID: 341451224905261324}
-  - component: {fileID: 341451222908418073}
   m_Layer: 0
   m_Name: Tower_Archer
   m_TagString: AcherT
@@ -191,7 +190,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -176894778, guid: 754409689444222408325c36e3898c09, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -219,17 +218,3 @@ MonoBehaviour:
   attackCooldown: 1
   ArrowPrefab: {fileID: 6145333639873479387, guid: cbb5720ae82492644a6930e789b251b4, type: 3}
   firePoint: {fileID: 341451224165637831}
---- !u!114 &341451222908418073
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 341451224905261313}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83c9abb5072cfe44e9134c9075fd9db5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towers: []
-  towerCosts: 
