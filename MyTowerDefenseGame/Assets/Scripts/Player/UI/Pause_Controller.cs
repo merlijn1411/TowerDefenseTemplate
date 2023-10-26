@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
-public class PauseScreenController : MonoBehaviour
+public class Pause_Controller : MonoBehaviour
 {
     public Canvas _PauseScreen;
     public static bool GameisPaused = false;
@@ -42,9 +42,8 @@ public class PauseScreenController : MonoBehaviour
         SceneManager.LoadScene("Level 1");
     }
 
-    public void QuitGame()
+    public void BackToMenu()
     {
-        Debug.Log("Quitting Game...");
-        Application.Quit();
+        SceneManager.LoadScene("Menu");
     }
 }
