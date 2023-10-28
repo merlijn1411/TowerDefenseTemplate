@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class WizardTower : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class WizardTower : MonoBehaviour
     private Transform target;
     private float lastAttackTime;
 
+    public AudioSource fireBallSound;
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
@@ -22,6 +25,7 @@ public class WizardTower : MonoBehaviour
         FindNearestEnemy();
         if (target != null && Time.time - lastAttackTime >= attackCooldown)
         {
+            fireBallSound.Play();
             Shoot();
             lastAttackTime = Time.time;
         }

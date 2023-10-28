@@ -21,7 +21,7 @@ public class EnemyMovement : MonoBehaviour
     {
         anim = GetComponent<Animator>();
 
-        waypointManager = FindObjectOfType<Waypoint>();
+        waypointManager = FindAnyObjectByType<Waypoint>(); 
 
         if (waypointManager == null)
         {

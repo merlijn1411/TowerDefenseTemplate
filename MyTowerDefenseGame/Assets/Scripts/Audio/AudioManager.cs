@@ -7,7 +7,7 @@ public class AudioManager : MonoBehaviour
 {
     public AudioMixer TheMixer;
 
-    void start()
+    void Start()
     {
         if (PlayerPrefs.HasKey("MasterVol"))
         {
