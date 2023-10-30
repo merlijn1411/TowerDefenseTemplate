@@ -18,6 +18,7 @@ public class WaveSpawner2 : MonoBehaviour
     public int MaxWave;
 
     public Canvas WinScreen;
+    
 
     void Start()
     {
