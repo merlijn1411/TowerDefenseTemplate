@@ -34,11 +34,7 @@ Je maakt in Unity een stabiele “build” van je game waarbij bugs en logs eers
 
 [Release Voorbeeld](https://github.com/erwinhenraat/TowerDefenseTemplate/releases)
 
-## Product 4: Game met Sprites(animations) en Textures 
-
-De build van je game bevat textures, sprites en sprite animations(bijv particles) die op de juiste manier zijn gebruikt en zorgen voor een goede afwerking van je game.  
-
-Plaats in je readme een animated gif van je gameplay (+- 10 sec.) waarin de implementatie van je textures en sprites goed te zien is.
+## Product 4: Game met Sprites(animations) en Textures .
 
 ![ezgif com-video-to-gif](https://github.com/merlijn1411/TowerDefenseTemplate/assets/114576658/fc028dce-dfee-4fc9-a7fa-5b763f6f083a)
 
