@@ -1,26 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    private bool gameEnded = false;
-    
+    public Canvas LoseScreen;
+
+    private void Start()
+    {
+        LoseScreen.enabled = false;
+    }
     void Update()
     {
-        if (gameEnded)
-            return;
-
         if (PlayerStats.lives <= 0)
         {
-            EndGame();
+            EndGameLose();
         }
     }
-    void EndGame()
+    void EndGameLose()
     {
-        Debug.Log("Game Over!");
         Time.timeScale = 0f;
-        gameEnded = true;
+        LoseScreen.enabled = true;
     }
     
 }
