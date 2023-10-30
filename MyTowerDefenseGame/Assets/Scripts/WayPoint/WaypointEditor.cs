@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
+#if UNITY_EDITOR
 using UnityEditor;
 using UnityEngine;
 
 [CustomEditor(typeof(Waypoint))]
-
 public class WaypointEditor : Editor
 {   
     private Waypoint Waypoint => target as Waypoint;
@@ -29,3 +27,4 @@ public class WaypointEditor : Editor
         }
     }
 }
+#endif
