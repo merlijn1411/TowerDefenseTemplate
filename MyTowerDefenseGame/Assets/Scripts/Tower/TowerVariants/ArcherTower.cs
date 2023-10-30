@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Diagnostics;
-
+using UnityEngine.Audio;
 public class ArcherTower : MonoBehaviour
 {
     public float attackRange = 5f; 
@@ -15,18 +15,20 @@ public class ArcherTower : MonoBehaviour
     private Transform target; 
     private float lastAttackTime;
 
+    public AudioSource fireSource;
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, attackRange);
     }
-
     private void Update()
     {
         FindNearestEnemy();
 
         if (target != null && Time.time - lastAttackTime >= attackCooldown)
         {
+            fireSource.Play();
             Shoot();
             lastAttackTime = Time.time;
         }

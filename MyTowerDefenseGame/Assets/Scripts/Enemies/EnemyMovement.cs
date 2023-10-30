@@ -1,7 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor.Animations;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
@@ -15,13 +13,10 @@ public class EnemyMovement : MonoBehaviour
 
     private int _currentWaypointIndex;
 
-    private Animator anim;
 
     private void Start()
     {
-        anim = GetComponent<Animator>();
-
-        waypointManager = FindObjectOfType<Waypoint>();
+        waypointManager = FindAnyObjectByType<Waypoint>(); 
 
         if (waypointManager == null)
         {

@@ -1,4 +1,3 @@
-using Mono.CompilerServices.SymbolWriter;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -46,7 +45,6 @@ public class ShopDoor : MonoBehaviour
                 }
                 else if (isShopOpen)
                 {
-                    Debug.Log("closed!");
                     CloseShop();
                 }
             }
