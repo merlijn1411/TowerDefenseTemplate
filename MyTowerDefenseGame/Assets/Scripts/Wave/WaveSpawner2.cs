@@ -8,7 +8,7 @@ public class WaveSpawner2 : MonoBehaviour
     public Transform spawnpoint;
 
     private Wave currentWave;
-    public static int currentWaveNumber;
+    private int currentWaveNumber;
 
     private bool canSpawn = false;
     private bool startSpawn = false;
@@ -16,12 +16,12 @@ public class WaveSpawner2 : MonoBehaviour
     private float nextSpawnTime;
     private float nextWaveStartTime;
 
-    public float waveDelay ;
+    public float waveDelay;
 
     void Start()
     {
         currentWaveNumber = -1; 
-        StartNextWave(); 
+        StartNextWave();
     }
 
     void Update()

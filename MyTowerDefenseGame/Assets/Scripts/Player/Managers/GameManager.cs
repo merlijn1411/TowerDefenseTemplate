@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
     void EndGame()
     {
         Debug.Log("Game Over!");
+        Time.timeScale = 0f;
+        gameEnded = true;
     }
     
 }
