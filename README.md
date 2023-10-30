@@ -3,10 +3,10 @@ Dit is een template wat door jullie te gebruiken is voor het juist inleveren van
 
 Begin met een korte omschrijving van je towerdefense game en hoe deze werkt. Plaats ook een paar screenshots.
 
-![My Game](![Schermafbeelding 2023-10-30 143909](https://github.com/merlijn1411/TowerDefenseTemplate/assets/114576658/459be111-1fbb-4cd8-b112-7eb207d5aa00)
+![My Game](https://github.com/merlijn1411/TowerDefenseTemplate/assets/114576658/459be111-1fbb-4cd8-b112-7eb207d5aa00)
 )
 
-![also](![Schermafbeelding 2023-10-30 144346](https://github.com/merlijn1411/TowerDefenseTemplate/assets/114576658/6e96a6ef-05d3-4138-9dcc-03281d383631)
+![also](https://github.com/merlijn1411/TowerDefenseTemplate/assets/114576658/6e96a6ef-05d3-4138-9dcc-03281d383631)
 )
 
 
@@ -45,8 +45,15 @@ Je maakt in Unity een stabiele “build” van je game waarbij bugs en logs eers
 
 ## Product 5: Issues met debug screenshots op GitHub 
 
-Zodra je bugs tegenkomt maak je een issue aan op github. In de issue omschrijf je het probleem en je gaat proberen via breakpoints te achterhalen wat het probleem is. Je maakt screenshot(s) van het debuggen op het moment dat je via de debugger console ziet wat er mis is. Deze screenshots met daarbij uitleg over het probleem en de bijhorende oplossing post je in het bijhorende github issue. 
-[Hier de link naar mijn issues](https://github.com/erwinhenraat/TowerDefenseTemplate/issues/)
+![hier het probleem](https://github.com/merlijn1411/TowerDefenseTemplate/assets/114576658/2c0ae7dd-bc61-4ae6-8b22-dab1d094b201)
+
+de bedoeling was dat de game zal beendigen als je al je levens kwijt bent ik checkde de methode eerst met een Debug.log zodat de game niet zou crashen. alleen toen al je levens op waren er niks verscheen in de console. het probleem was dat ik een aparte float had aangemaakt die niet gelinkd was met de PLayerstats. voor de duidelijkheid ik gebruik de playerstats script om aan te geven hoeveel levens je hebt en heveel geld je hebt. om dit probleem op te lossen moet ik het script aan roepen en de aangemaakt private float verwijderen. en het daarna veranderen van if(licves <= 0) naar if(PlayerStats.lives <= 0) zodat ik de goede variable kon aangeven.
+
+![hier de oplossing](https://github.com/merlijn1411/TowerDefenseTemplate/assets/114576658/0b640ef2-f194-4727-9436-57860a019182)
+
+![hier nog een screenshot van het PlayerStats script](https://github.com/merlijn1411/TowerDefenseTemplate/assets/114576658/945677fc-d64f-4eaa-a0b8-c0a689986786)
+
+
 
 ## Product 6: Game design met onderbouwing 
 
