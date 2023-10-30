@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,7 +16,7 @@ public class WaveSpawner2 : MonoBehaviour
     private float nextSpawnTime;
 
     public float waveDelay;
-    public int MaxWave;
+    public float MaxWave;
 
     public Canvas WinScreen;
     
@@ -23,7 +24,7 @@ public class WaveSpawner2 : MonoBehaviour
     void Start()
     {
         WinScreen.enabled = false;
-        currentWaveNumber = -1; 
+        currentWaveNumber = -1;
         StartNextWave();
     }
 
@@ -43,7 +44,8 @@ public class WaveSpawner2 : MonoBehaviour
         }
 
         int AllEnemies = GameObject.FindGameObjectsWithTag("Enemy").Length;
-        if (waves.Length <= MaxWave && AllEnemies <= 0)
+
+        if (AllEnemies <= 0 && currentWaveNumber == MaxWave)
         {
             EndWaves();
         }
