@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WaveSpawner2 : MonoBehaviour
 {
@@ -11,15 +12,16 @@ public class WaveSpawner2 : MonoBehaviour
     private int currentWaveNumber;
 
     private bool canSpawn = false;
-    private bool startSpawn = false;
-    private bool canAnimateWave = false;
     private float nextSpawnTime;
-    private float nextWaveStartTime;
 
     public float waveDelay;
+    public int MaxWave;
+
+    public Canvas WinScreen;
 
     void Start()
     {
+        WinScreen.enabled = false;
         currentWaveNumber = -1; 
         StartNextWave();
     }
@@ -32,17 +34,17 @@ public class WaveSpawner2 : MonoBehaviour
             SpawnWave();
         }
 
-        GameObject[] totalEnemies = GameObject.FindGameObjectsWithTag("Enemy");
-        if (totalEnemies.Length == 0 && startSpawn && currentWaveNumber < waves.Length)
+        waveDelay -= Time.deltaTime;
+        if (waveDelay <= 0)
         {
-            if (canAnimateWave)
-            {
-                canAnimateWave = false;
-            }
-            else if (Time.time >= nextWaveStartTime)
-            {
-                StartNextWave(); 
-            }
+            StartNextWave();
+            ResetTimer();
+        }
+
+        int AllEnemies = GameObject.FindGameObjectsWithTag("Enemy").Length;
+        if (waves.Length <= MaxWave && AllEnemies <= 0)
+        {
+            EndWaves();
         }
     }
 
@@ -52,7 +54,6 @@ public class WaveSpawner2 : MonoBehaviour
         if (currentWaveNumber < waves.Length)
         {
             currentWave = waves[currentWaveNumber];
-            nextWaveStartTime = Time.time + waveDelay; 
             canSpawn = true;
         }
     }
@@ -69,8 +70,16 @@ public class WaveSpawner2 : MonoBehaviour
             if (currentWave.NumberEnemies == 0)
             {
                 canSpawn = false;
-                canAnimateWave = true;
             }
         }
+    }
+
+    public void EndWaves()
+    {
+        WinScreen.enabled = true;
+    }
+    public void ResetTimer()
+    {
+        waveDelay = 30;
     }
 }
