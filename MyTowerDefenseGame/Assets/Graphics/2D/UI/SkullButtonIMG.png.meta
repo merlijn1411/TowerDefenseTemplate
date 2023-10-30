@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SkullButtonIMG_0: -7128026977678826472
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
