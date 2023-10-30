@@ -24,7 +24,7 @@ Bijvoorbeeld:
 
 Je commit de mappenstructuur van je unity project op github en verwijst vanuit je readme naar de root map van je project. Met een netjes en goed gestructureerde mappenstructuur en benamingen van files toon je aan dat je dit leerdoel beheerst. 
 
-Dit is de [MIJN ROOT](https://github.com/merlijn1411/TowerDefenseTemplate/tree/master/MyTowerDefenseGame) folder van mijn unity project.
+Dit is de [MIJN ROOT](https://github.com/merlijn1411/TowerDefenseTemplate/tree/develop/MyTowerDefenseGame) folder van mijn unity project.
 
 Zorg dat deze verwijst naar je Develop branch.
 
