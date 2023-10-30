@@ -39040,9 +39040,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - waveName: 1
-    NumberEnemies: 4
+    NumberEnemies: 9
     EnemyPrefabs:
     - {fileID: 5036571535899570127, guid: e8ac24acbdb91154fa6af3bfe5c79b8c, type: 3}
+    - {fileID: 1403540958985464598, guid: 0424febd03971f04f88f5a9884e12fd5, type: 3}
     spawnInterval: 2
   - waveName: 2
     NumberEnemies: 12
@@ -39055,7 +39056,6 @@ MonoBehaviour:
     - {fileID: 5036571535899570127, guid: e8ac24acbdb91154fa6af3bfe5c79b8c, type: 3}
     spawnInterval: 1
   spawnpoint: {fileID: 1422741043}
-  currentWaveNumber: 0
   waveDelay: 10
 --- !u!1 &1714260570
 GameObject:
@@ -40319,7 +40319,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   livesText: {fileID: 1453067577}
   CoinsText: {fileID: 1914441786}
-  WaveText: {fileID: 1127530928}
 --- !u!1 &2025827036
 GameObject:
   m_ObjectHideFlags: 0

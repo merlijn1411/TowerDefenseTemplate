@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      pixelart_skull_0: -7831799048446627316
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
