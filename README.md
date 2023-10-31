@@ -111,21 +111,17 @@ Wat ik wou testen was day alle UI op zn plek zat, de waves beginnen en de enemy'
 
 ## Product 9: SCRUM planning inschatting 
 
-Je maakt een SCRUM planning en geeft daarbij een inschatting aan elke userstory d.m.v storypoints / zelf te bepalen eenheden. (bijv. Storypoints, Sizes of tijd) aan het begin van een nieuwe sprint update je deze inschatting per userstory. 
-
-Plaats in de readme een link naar je trello en **zorg ervoor dat je deze openbaar maakt**
-
 [Link naar mijn openbare trello](https://trello.com/b/DSJqXorz/bo-jaar-2-periode-1-td)
 
 ## Product 10: Gitflow conventions
 
-Je hebt voor je eigen project in je readme gitflow conventies opgesteld en je hier ook aantoonbaar aan gehouden. 
-
-De gitflow conventions gaan uit van een extra branch Develop naast de "Master"/"Main". Op de main worden alleen stabiele releases gezet.
-
-Verder worden features op een daarvoor bedoelde feature banch ontwikkeld. Ook kun je gebruik maken van een hotfix brancg vanaf develop.
-
 Leg hier uit welke branches jij gaat gebruiken en wat voor namen je hier aan gaat meegeven. Hoe vaak ga je comitten en wat voor commit messages wil je geven?
+Master: hier komt het hele product te staan met build dit moet is eigenlijk een soort van release branch. ik zou alleen willen commiten als ik het wil gaan release. in de commit komt te staan welke versie het is. 
+
+Develop: hier in komt alles te staan en ga ik vooral de game uitesten voor dat ik het ga release en op de main/master branch zet. op deze branch probeer ik niet alte veel commiten alleen als het nodig is zoals de Build succesvol is ge build. de commit zou dan zijn build gelukt. 
+
+Features : om nieuwe dingen toe te voegen gebruik ik de features branch. ik zou niet weten hoeveel commits ik ga geven maar wel wat de messages zijn. de messages zijn vooral over nieuwe ideeen in het spel uitegwerkt. 
+
 
 Meer info over het gebruiken van gitflow [hier](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
 
