@@ -72,16 +72,13 @@ Omschrijf per mechanic welke game design keuzes je hebt gemaakt en waarom je dit
 
 *Mijn torens hebben ook nog een f.o.v waardoor je pas gaan mikken als enemies in de buurt zijn. ook hebben mijn torens geen 360 graden view maar 90 graden waardoor het een extra uitdaging is voor de speler om de torens ook op de meest tactische manier te roteren.*
 
-*  **Je game bevat vernietigbare vijanden die 1 of meerderen paden kunnen volgen.**  
+*  **Mijn Game Bevat BuildPlatforms waar je torens kan plaatsen**  
 
-*Mijn enemies bevatten 3 types: 
-1 snelle die ook snel dood gaat. echter als er veel snelle enemies zijn is de kans steeds groter dat ze bij hun doel komen omdat de torens maar 1 enemy tegelijk kan targetten. Het forceert de speler dus om veel goedkope torens te plaatsen.
-Ook is er een langzame gepantserde enemy. Deze kan eigenlijk alleen maar worden vernietigd door magische torens die zijn geupgrade. goedkope torens doen bijna geen schade. De speler moet dus een balans gaan zoeken tussen veel goedkope torens en upgraden van torens.
-Tot slot is er een vijand die andere enemies healt dit zorgt ervoor dat de speler een extra nadeel heeft en de torens handmatig de deze healer moet laten targetten hierdoor wordt de speler gedwongen om actiever de game te spelen omdat anders geen enkele enemy meer dood gaat.*
+* Mijn torens moeten geplaats worden op een BuildPlatform. Je klikt op de BuildPlatform dan gaat er een shop open en dan kan je uit twee torens kiezen. het adertje is dat je wel genoeg coins nodig hebt om de toren te gaan plaatsten. *
 
-*  **Je game bevat een “wave” systeem waarmee er onder bepaalde voorwaarden (tijd/vijanden op) nieuwe waves met vijanden het veld in komen.**
+*  **Mijn game bevat een “wave” systeem waarmee er onder bepaalde voorwaarden (tijd/vijanden op) nieuwe waves met vijanden het veld in komen.**
 
-*Onderbouwing hier...*
+*Als het spel begint gaat gelijk de eerste wave van start als alle enemies zijn gespawnd en dat de aangewezen timer op is gaat de volgende wave van start. *
 
 *  **Een “health” systeem waarmee je levens kunt verliezen als vijanden hun doel bereiken en zodoende het spel kunt verliezen.** 
 
@@ -89,15 +86,11 @@ Tot slot is er een vijand die andere enemies healt dit zorgt ervoor dat de spele
 
 *  **Een “resource” systeem waarmee je resources kunt verdienen waarmee je torens kunt kopen en .evt upgraden.**
 
-*Onderbouwing hier...*
+*Mijn resources zijn coins. De coins krijg je  wanneer je een enemy hebt gedood elke enemy heeft ook nog zijn waarde / Valuta Coins.*
 
-*  **Een “upgrade” systeem om je torens te verbeteren.**
+*  **Mijn Game Bevat Enemies met zijn eigen Health en damage.**
 
-*Onderbouwing hier...*
-
-*  **Een “movement prediction” systeem waarmee je kan berekenen waar een toren heen moeten schieten om een bewegend object te kunnen raken. (Moeilijk)**
-
-*Onderbouwing hier...*
+*Ik heb drie verschillende enemies met elke hun eigen health en damage. Op basis van hoe sterk de enemy eruit ziet heb ik zo ieder zijn eigen Health en damage. Zo kan de grootste enemy de meeste aanvallen aan maar kan tevens ook de meeste schade toe brengen als die de finish line heeft behaald*
 
 ## Product 7: Class Diagram voor volledige codebase 
 
