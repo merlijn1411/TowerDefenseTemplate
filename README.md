@@ -47,7 +47,11 @@ Je maakt in Unity een stabiele “build” van je game waarbij bugs en logs eers
 
 ![hier het probleem](https://github.com/merlijn1411/TowerDefenseTemplate/assets/114576658/2c0ae7dd-bc61-4ae6-8b22-dab1d094b201)
 
-de bedoeling was dat de game zal beendigen als je al je levens kwijt bent ik checkde de methode eerst met een Debug.log zodat de game niet zou crashen. alleen toen al je levens op waren er niks verscheen in de console. het probleem was dat ik een aparte float had aangemaakt die niet gelinkd was met de PLayerstats. voor de duidelijkheid ik gebruik de playerstats script om aan te geven hoeveel levens je hebt en heveel geld je hebt. om dit probleem op te lossen moet ik het script aan roepen en de aangemaakt private float verwijderen. en het daarna veranderen van if(licves <= 0) naar if(PlayerStats.lives <= 0) zodat ik de goede variable kon aangeven.
+de bedoeling was dat de game zal beendigen als je al je levens kwijt bent ik checkde de methode eerst met een Debug.log zodat de game niet zou crashen. 
+
+alleen toen al je levens op waren er niks verscheen in de console. het probleem was dat ik een aparte float had aangemaakt die niet gelinkd was met de PLayerstats. 
+
+voor de duidelijkheid ik gebruik de playerstats script om aan te geven hoeveel levens je hebt en heveel geld je hebt. om dit probleem op te lossen moet ik het script aan roepen en de aangemaakt private float verwijderen. en het daarna veranderen van if(licves <= 0) naar if(PlayerStats.lives <= 0) zodat ik de goede variable kon aangeven.
 
 ![hier de oplossing](https://github.com/merlijn1411/TowerDefenseTemplate/assets/114576658/0b640ef2-f194-4727-9436-57860a019182)
 
