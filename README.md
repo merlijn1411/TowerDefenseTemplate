@@ -115,8 +115,6 @@ Wat ik wou testen was day alle UI op zn plek zat, de waves beginnen en de enemy'
 
 ## Product 10: Gitflow conventions
 
-Leg hier uit welke branches jij gaat gebruiken en wat voor namen je hier aan gaat meegeven. Hoe vaak ga je comitten en wat voor commit messages wil je geven?
-
 Master: hier komt het hele product te staan met build dit moet is eigenlijk een soort van release branch. ik zou alleen willen commiten als ik het wil gaan release. in de commit komt te staan welke versie het is. 
 
 Develop: hier in komt alles te staan en ga ik vooral de game uitesten voor dat ik het ga release en op de main/master branch zet. op deze branch probeer ik niet alte veel commiten alleen als het nodig is zoals de Build succesvol is ge build. de commit zou dan zijn build gelukt. 
