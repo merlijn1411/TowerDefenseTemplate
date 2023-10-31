@@ -68,10 +68,6 @@ Voorbeeld van een one page design:
 
 Omschrijf per mechanic welke game design keuzes je hebt gemaakt en waarom je dit hebt gedaan.
 
-*  **Je game bevat torens die kunnen mikken en schieten op een bewegend doel.** 
-
-*Mijn torens hebben ook nog een f.o.v waardoor je pas gaan mikken als enemies in de buurt zijn. ook hebben mijn torens geen 360 graden view maar 90 graden waardoor het een extra uitdaging is voor de speler om de torens ook op de meest tactische manier te roteren.*
-
 *  **Mijn Game Bevat BuildPlatforms waar je torens kan plaatsen**  
 
  Mijn torens moeten geplaats worden op een BuildPlatform. Je klikt op de BuildPlatform dan gaat er een shop open en dan kan je uit twee torens kiezen. het adertje is dat je wel genoeg coins nodig hebt om de toren te gaan plaatsten. 
@@ -80,9 +76,9 @@ Omschrijf per mechanic welke game design keuzes je hebt gemaakt en waarom je dit
 
 *Als het spel begint gaat gelijk de eerste wave van start als alle enemies zijn gespawnd en dat de aangewezen timer op is gaat de volgende wave van start.*
 
-*  **Een “health” systeem waarmee je levens kunt verliezen als vijanden hun doel bereiken en zodoende het spel kunt verliezen.** 
+*  **Mijn Game Bevat Enemies met zijn eigen Health en damage.** 
 
-*Onderbouwing hier...*
+*Ik heb drie verschillende enemies met elke hun eigen health en damage. Op basis van hoe sterk de enemy eruit ziet heb ik zo ieder zijn eigen Health en damage. Zo kan de grootste enemy de meeste aanvallen aan maar kan tevens ook de meeste schade toe brengen als die de finish line heeft behaald.*
 
 *  **Een “resource” systeem waarmee je resources kunt verdienen waarmee je torens kunt kopen en .evt upgraden.**
 
