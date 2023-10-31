@@ -78,7 +78,7 @@ Omschrijf per mechanic welke game design keuzes je hebt gemaakt en waarom je dit
 
 *  **Mijn game bevat een “wave” systeem waarmee er onder bepaalde voorwaarden (tijd/vijanden op) nieuwe waves met vijanden het veld in komen.**
 
-*Als het spel begint gaat gelijk de eerste wave van start als alle enemies zijn gespawnd en dat de aangewezen timer op is gaat de volgende wave van start. *
+*Als het spel begint gaat gelijk de eerste wave van start als alle enemies zijn gespawnd en dat de aangewezen timer op is gaat de volgende wave van start.*
 
 *  **Een “health” systeem waarmee je levens kunt verliezen als vijanden hun doel bereiken en zodoende het spel kunt verliezen.** 
 
