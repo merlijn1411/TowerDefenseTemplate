@@ -105,9 +105,9 @@ Tot slot is er een vijand die andere enemies healt dit zorgt ervoor dat de spele
 
 
 ## Product 8: Prototype test video
-Je hebt een werkend prototype gemaakt om een idee te testen. Omschrijf if je readme wat het idee van de mechanics is geweest wat je wilde testen en laat een korte video van de gameplay test zien. 
+Wat ik wou testen was day alle UI op zn plek zat, de waves beginnen en de enemy's daadwerkelijk spawnde. 
 
-[![example test video](https://ucarecdn.com/dbdc3ad0-f375-40ad-8987-9e6451b28b50/)](https://www.youtube.com/watch?v=CzzRML1swF0)
+[![My Gameplay Clip](https://github.com/merlijn1411/TowerDefenseTemplate/assets/114576658/b2e3f5dc-7883-4a05-8bd9-e18b07a5c123)
 
 ## Product 9: SCRUM planning inschatting 
 
