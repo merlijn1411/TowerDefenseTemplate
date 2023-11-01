@@ -47,7 +47,11 @@ Je maakt in Unity een stabiele “build” van je game waarbij bugs en logs eers
 
 ![hier het probleem](https://github.com/merlijn1411/TowerDefenseTemplate/assets/114576658/2c0ae7dd-bc61-4ae6-8b22-dab1d094b201)
 
-de bedoeling was dat de game zal beendigen als je al je levens kwijt bent ik checkde de methode eerst met een Debug.log zodat de game niet zou crashen. alleen toen al je levens op waren er niks verscheen in de console. het probleem was dat ik een aparte float had aangemaakt die niet gelinkd was met de PLayerstats. voor de duidelijkheid ik gebruik de playerstats script om aan te geven hoeveel levens je hebt en heveel geld je hebt. om dit probleem op te lossen moet ik het script aan roepen en de aangemaakt private float verwijderen. en het daarna veranderen van if(licves <= 0) naar if(PlayerStats.lives <= 0) zodat ik de goede variable kon aangeven.
+de bedoeling was dat de game zal beendigen als je al je levens kwijt bent ik checkde de methode eerst met een Debug.log zodat de game niet zou crashen. 
+
+alleen toen al je levens op waren er niks verscheen in de console. het probleem was dat ik een aparte float had aangemaakt die niet gelinkd was met de PLayerstats. 
+
+voor de duidelijkheid ik gebruik de playerstats script om aan te geven hoeveel levens je hebt en heveel geld je hebt. om dit probleem op te lossen moet ik het script aan roepen en de aangemaakt private float verwijderen. en het daarna veranderen van if(licves <= 0) naar if(PlayerStats.lives <= 0) zodat ik de goede variable kon aangeven.
 
 ![hier de oplossing](https://github.com/merlijn1411/TowerDefenseTemplate/assets/114576658/0b640ef2-f194-4727-9436-57860a019182)
 
@@ -64,94 +68,48 @@ Voorbeeld van een one page design:
 
 Omschrijf per mechanic welke game design keuzes je hebt gemaakt en waarom je dit hebt gedaan.
 
-*  **Je game bevat torens die kunnen mikken en schieten op een bewegend doel.** 
+*  **Mijn Game Bevat BuildPlatforms waar je torens kan plaatsen**  
 
-*Mijn torens hebben ook nog een f.o.v waardoor je pas gaan mikken als enemies in de buurt zijn. ook hebben mijn torens geen 360 graden view maar 90 graden waardoor het een extra uitdaging is voor de speler om de torens ook op de meest tactische manier te roteren.*
+ Mijn torens moeten geplaats worden op een BuildPlatform. Je klikt op de BuildPlatform dan gaat er een shop open en dan kan je uit twee torens kiezen. het adertje is dat je wel genoeg coins nodig hebt om de toren te gaan plaatsten. 
 
-*  **Je game bevat vernietigbare vijanden die 1 of meerderen paden kunnen volgen.**  
+*  **Mijn game bevat een “wave” systeem waarmee er onder bepaalde voorwaarden (tijd/vijanden op) nieuwe waves met vijanden het veld in komen.**
 
-*Mijn enemies bevatten 3 types: 
-1 snelle die ook snel dood gaat. echter als er veel snelle enemies zijn is de kans steeds groter dat ze bij hun doel komen omdat de torens maar 1 enemy tegelijk kan targetten. Het forceert de speler dus om veel goedkope torens te plaatsen.
-Ook is er een langzame gepantserde enemy. Deze kan eigenlijk alleen maar worden vernietigd door magische torens die zijn geupgrade. goedkope torens doen bijna geen schade. De speler moet dus een balans gaan zoeken tussen veel goedkope torens en upgraden van torens.
-Tot slot is er een vijand die andere enemies healt dit zorgt ervoor dat de speler een extra nadeel heeft en de torens handmatig de deze healer moet laten targetten hierdoor wordt de speler gedwongen om actiever de game te spelen omdat anders geen enkele enemy meer dood gaat.*
+*Als het spel begint gaat gelijk de eerste wave van start als alle enemies zijn gespawnd en dat de aangewezen timer op is gaat de volgende wave van start.*
 
-*  **Je game bevat een “wave” systeem waarmee er onder bepaalde voorwaarden (tijd/vijanden op) nieuwe waves met vijanden het veld in komen.**
+*  **Mijn Game Bevat Enemies met zijn eigen Health en damage.** 
 
-*Onderbouwing hier...*
-
-*  **Een “health” systeem waarmee je levens kunt verliezen als vijanden hun doel bereiken en zodoende het spel kunt verliezen.** 
-
-*Onderbouwing hier...*
+*Ik heb drie verschillende enemies met elke hun eigen health en damage. Op basis van hoe sterk de enemy eruit ziet heb ik zo ieder zijn eigen Health en damage. Zo kan de grootste enemy de meeste aanvallen aan maar kan tevens ook de meeste schade toe brengen als die de finish line heeft behaald.*
 
 *  **Een “resource” systeem waarmee je resources kunt verdienen waarmee je torens kunt kopen en .evt upgraden.**
 
-*Onderbouwing hier...*
+*Mijn resources zijn coins. De coins krijg je  wanneer je een enemy hebt gedood elke enemy heeft ook nog zijn waarde / Valuta Coins.*
 
-*  **Een “upgrade” systeem om je torens te verbeteren.**
+*  **Mijn Game Bevat Enemies met zijn eigen Health en damage.**
 
-*Onderbouwing hier...*
-
-*  **Een “movement prediction” systeem waarmee je kan berekenen waar een toren heen moeten schieten om een bewegend object te kunnen raken. (Moeilijk)**
-
-*Onderbouwing hier...*
+*Ik heb drie verschillende enemies met elke hun eigen health en damage. Op basis van hoe sterk de enemy eruit ziet heb ik zo ieder zijn eigen Health en damage. Zo kan de grootste enemy de meeste aanvallen aan maar kan tevens ook de meeste schade toe brengen als die de finish line heeft behaald*
 
 ## Product 7: Class Diagram voor volledige codebase 
 
-Je brengt je volledige codebase in kaart met behulp van een class diagram. Binnen de classes hoeven geen private members te worden weergegeven. Wel alle public members (fields en methods). Ook geef je indien relevant de relaties tussen je classes weer. Je class diagram plaats je in je readme op github. Evt mag je dit doen m.b.v de [“Mermaid”](https://mermaid.js.org/syntax/classDiagram.html) tool.
+[“My Class Diagram”](https://miro.com/welcomeonboard/TjEyMThpRmhndEFqTUFhNlBiVjlFblBMRVZvWkdrOFM1OVkxY2lvRXBoZEE3aGNJVU84V1VxNzNnSFp6UWNJZ3wzNDU4NzY0NTY2NjA4MDk3MzMxfDI=?share_link_id=522282518661) 
 
-
-```mermaid
----
-title: Animal example
----
-classDiagram
-    note "From Duck till Zebra"
-    Animal <|-- Duck
-    note for Duck "can fly\ncan swim\ncan dive\ncan help in debugging"
-    Animal <|-- Fish
-    Animal <|-- Zebra
-    Animal : +int age
-    Animal : +String gender
-    Animal: +isMammal()
-    Animal: +mate()
-    class Duck{
-        +String beakColor
-        +swim()
-        +quack()
-    }
-    class Fish{
-        -int sizeInFeet
-        -canEat()
-    }
-    class Zebra{
-        +bool is_wild
-        +run()
-    }
-
-```
 
 ## Product 8: Prototype test video
-Je hebt een werkend prototype gemaakt om een idee te testen. Omschrijf if je readme wat het idee van de mechanics is geweest wat je wilde testen en laat een korte video van de gameplay test zien. 
+Wat ik wou testen was day alle UI op zn plek zat, de waves beginnen en de enemy's daadwerkelijk spawnde. 
 
-[![example test video](https://ucarecdn.com/dbdc3ad0-f375-40ad-8987-9e6451b28b50/)](https://www.youtube.com/watch?v=CzzRML1swF0)
+[![My Gameplay Clip](https://github.com/merlijn1411/TowerDefenseTemplate/assets/114576658/b2e3f5dc-7883-4a05-8bd9-e18b07a5c123)
 
 ## Product 9: SCRUM planning inschatting 
 
-Je maakt een SCRUM planning en geeft daarbij een inschatting aan elke userstory d.m.v storypoints / zelf te bepalen eenheden. (bijv. Storypoints, Sizes of tijd) aan het begin van een nieuwe sprint update je deze inschatting per userstory. 
-
-Plaats in de readme een link naar je trello en **zorg ervoor dat je deze openbaar maakt**
-
-[Link naar de openbare trello](https://trello.com/b/w60wkKSU/examen-paraphrenia)
+[Link naar mijn openbare trello](https://trello.com/b/DSJqXorz/bo-jaar-2-periode-1-td)
 
 ## Product 10: Gitflow conventions
 
-Je hebt voor je eigen project in je readme gitflow conventies opgesteld en je hier ook aantoonbaar aan gehouden. 
+Master: hier komt het hele product te staan met build dit moet is eigenlijk een soort van release branch. ik zou alleen willen commiten als ik het wil gaan release. in de commit komt te staan welke versie het is. 
 
-De gitflow conventions gaan uit van een extra branch Develop naast de "Master"/"Main". Op de main worden alleen stabiele releases gezet.
+Develop: hier in komt alles te staan en ga ik vooral de game uitesten voor dat ik het ga release en op de main/master branch zet. op deze branch probeer ik niet alte veel commiten alleen als het nodig is zoals de Build succesvol is ge build. de commit zou dan zijn build gelukt. 
 
-Verder worden features op een daarvoor bedoelde feature banch ontwikkeld. Ook kun je gebruik maken van een hotfix brancg vanaf develop.
+Features : om nieuwe dingen toe te voegen gebruik ik de features branch. ik zou niet weten hoeveel commits ik ga geven maar wel wat de messages zijn. de messages zijn vooral over nieuwe ideeen in het spel uitegwerkt. 
 
-Leg hier uit welke branches jij gaat gebruiken en wat voor namen je hier aan gaat meegeven. Hoe vaak ga je comitten en wat voor commit messages wil je geven?
 
 Meer info over het gebruiken van gitflow [hier](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
 
