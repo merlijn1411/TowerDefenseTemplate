@@ -11,14 +11,14 @@ public class GameManager : MonoBehaviour
     {
         LoseScreen.enabled = false;
     }
-    void Update()
+    private void Update()
     {
         if (PlayerStats.lives <= 0)
         {
             EndGameLose();
         }
     }
-    void EndGameLose()
+    public void EndGameLose()
     {
         Time.timeScale = 0f;
         LoseScreen.enabled = true;

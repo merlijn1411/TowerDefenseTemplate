@@ -11,7 +11,7 @@ public class AudioController : MonoBehaviour
 
     public Slider musicSlider, sfxSlider;
 
-    void Start()
+    public void Start()
     {
         float vol = 0f;
 

@@ -7,11 +7,11 @@ public class Pause_Controller : MonoBehaviour
 {
     public Canvas _PauseScreen;
     public static bool GameisPaused = false;
-    void Start()
+    public void Start()
     {
         Resume();    
     }
-    void Update()
+    public void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -25,7 +25,7 @@ public class Pause_Controller : MonoBehaviour
             }
         }
     }
-    void Pause()
+    public void Pause()
     {
         _PauseScreen.enabled = true;
         GameisPaused = true;

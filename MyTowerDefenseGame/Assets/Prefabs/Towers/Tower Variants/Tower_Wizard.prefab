@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 1209419620768415097}
   - component: {fileID: 1209419620768415092}
   - component: {fileID: 1209419620768415093}
-  - component: {fileID: 1209419620768415098}
+  - component: {fileID: 5537901934178089059}
   - component: {fileID: 2340592397777682567}
   m_Layer: 0
   m_Name: Tower_Wizard
@@ -60,13 +60,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1209419620768415094}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1.1887876, y: -1.8360288, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1209419619935011939}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!222 &1209419620768415092
 CanvasRenderer:
@@ -128,7 +128,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1209419620768415098
+--- !u!114 &5537901934178089059
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8aba201d42c734049860857edaac24b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 3.5
+  attackRange: 5
   attackCooldown: 2
   FireBallPrefab: {fileID: 2126777522699652849, guid: 8e23c8a6abe6d134c83048555363f98a, type: 3}
   firePoint: {fileID: 1209419621122988147}

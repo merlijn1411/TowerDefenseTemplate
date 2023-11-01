@@ -20,9 +20,9 @@ public class WaveSpawner2 : MonoBehaviour
 
     public Canvas WinScreen;
     public Text WaveNumberT;
-    
 
-    void Start()
+
+    public void Start()
     {
         WinScreen.enabled = false;
         currentWaveNumber = 0;
@@ -31,7 +31,7 @@ public class WaveSpawner2 : MonoBehaviour
         WaveNumberT.text = currentWaveNumber + "/" + MaxWave.ToString();
     }
 
-    void Update()
+    public void Update()
     {
         if (currentWaveNumber < waves.Length)
         {
@@ -48,13 +48,13 @@ public class WaveSpawner2 : MonoBehaviour
         }
 
         int AllEnemies = GameObject.FindGameObjectsWithTag("Enemy").Length;
-        if (AllEnemies <= 0 && currentWaveNumber == MaxWave)
+        if (AllEnemies <= 0 && currentWaveNumber >= MaxWave)
         {
             EndWaves();
         }
     }
 
-    void StartNextWave()
+    public void StartNextWave()
     {
         currentWaveNumber++;
         if (currentWaveNumber < waves.Length)

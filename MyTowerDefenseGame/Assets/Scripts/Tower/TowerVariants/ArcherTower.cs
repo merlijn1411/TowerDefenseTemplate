@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Diagnostics;
@@ -34,7 +33,7 @@ public class ArcherTower : MonoBehaviour
         }
     }
 
-    void FindNearestEnemy()
+    private void FindNearestEnemy()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
@@ -63,7 +62,7 @@ public class ArcherTower : MonoBehaviour
 
     }
 
-    void Shoot()
+    private void Shoot()
     {
         GameObject bullet = Instantiate(ArrowPrefab, firePoint.position, firePoint.rotation);
         ProjectileArrow ArrowScript = bullet.GetComponent<ProjectileArrow>();
