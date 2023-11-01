@@ -147,9 +147,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  damage: 20
+  damage: 10
   destroyDelay: 1
-  HitSound: {fileID: 7418481199213551820}
 --- !u!50 &5219643804970667976
 Rigidbody2D:
   serializedVersion: 4
