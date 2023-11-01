@@ -31,7 +31,7 @@ public class WizardTower : MonoBehaviour
         }
     }
 
-    void FindNearestEnemy()
+    private void FindNearestEnemy()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
@@ -59,7 +59,7 @@ public class WizardTower : MonoBehaviour
         }
     }
 
-    void Shoot()
+    private void Shoot()
     {
         GameObject FireBall = Instantiate(FireBallPrefab, firePoint.position, firePoint.rotation);
         ProjectileFireball FireballScript = FireBall.GetComponent<ProjectileFireball>();

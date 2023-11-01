@@ -16,13 +16,13 @@ public class ShopDoor : MonoBehaviour
     private Renderer _renderer;
 
 
-    void Start()
+    private void Start()
     {
         shopCanvas.enabled = false;
         isShopOpen = false;
         _renderer = GetComponent<Renderer>();
     }
-    void Update()
+    private void Update()
     {
     
         if (Input.GetMouseButtonDown(0))
@@ -51,14 +51,14 @@ public class ShopDoor : MonoBehaviour
         }
     }
 
-    void OpensHop()
+    public void OpensHop()
     {
         isShopOpen = true;
         shopCanvas.enabled = true;
         //shopCanvas = Instantiate(uiPrefab, transform.position, Quaternion.identity);
     }
 
-    void CloseShop()
+    public void CloseShop()
     {
         isShopOpen = false;
         shopCanvas.enabled = false;

@@ -9,7 +9,7 @@ public class PlayerUI: MonoBehaviour
     public Text CoinsText;
 
 
-    void Update()
+    public void Update()
     {
         livesText.text = PlayerStats.lives.ToString();
         CoinsText.text = PlayerStats.Money.ToString();
