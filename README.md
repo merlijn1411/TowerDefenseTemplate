@@ -68,25 +68,21 @@ Voorbeeld van een one page design:
 
 Omschrijf per mechanic welke game design keuzes je hebt gemaakt en waarom je dit hebt gedaan.
 
-*  **Mijn Game Bevat BuildPlatforms waar je torens kan plaatsen**  
+*  **De speler kan verschillende types torens kopen en plaatsen.**  
 
- Mijn torens moeten geplaats worden op een BuildPlatform. Je klikt op de BuildPlatform dan gaat er een shop open en dan kan je uit twee torens kiezen. het adertje is dat je wel genoeg coins nodig hebt om de toren te gaan plaatsten. 
+ ja deze mechanic heb ik. Mijn torens moeten geplaats worden op een BuildPlatform. Je klikt op de BuildPlatform dan gaat er een shop open en dan kan je uit twee torens kiezen. het adertje is dat je wel genoeg coins nodig hebt om de toren te gaan plaatsten. 
 
 *  **Mijn game bevat een “wave” systeem waarmee er onder bepaalde voorwaarden (tijd/vijanden op) nieuwe waves met vijanden het veld in komen.**
 
-*Als het spel begint gaat gelijk de eerste wave van start als alle enemies zijn gespawnd en dat de aangewezen timer op is gaat de volgende wave van start.*
+*ja deze heb ik mechanic. Als het spel begint gaat gelijk de eerste wave van start als alle enemies zijn gespawnd en dat de aangewezen timer op is gaat de volgende wave van start.*
 
-*  **Mijn Game Bevat Enemies met zijn eigen Health en damage.** 
+*  **Er is een "health" systeem waarmee je levens kunt verliezen als vijanden hun doel bereiken en zodoende het spel verliezen.** 
 
-*Ik heb drie verschillende enemies met elke hun eigen health en damage. Op basis van hoe sterk de enemy eruit ziet heb ik zo ieder zijn eigen Health en damage. Zo kan de grootste enemy de meeste aanvallen aan maar kan tevens ook de meeste schade toe brengen als die de finish line heeft behaald.*
+*ja deze mechanic heb ik. Ik heb drie verschillende enemies met elke hun eigen health en damage. Op basis van hoe sterk de enemy eruit ziet heb ik zo ieder zijn eigen Health en damage. Zo kan de grootste enemy de meeste aanvallen aan maar kan tevens ook de meeste schade toe brengen als die de finish line heeft behaald.*
 
 *  **Een “resource” systeem waarmee je resources kunt verdienen waarmee je torens kunt kopen en .evt upgraden.**
 
-*Mijn resources zijn coins. De coins krijg je  wanneer je een enemy hebt gedood elke enemy heeft ook nog zijn waarde / Valuta Coins.*
-
-*  **Mijn Game Bevat Enemies met zijn eigen Health en damage.**
-
-*Ik heb drie verschillende enemies met elke hun eigen health en damage. Op basis van hoe sterk de enemy eruit ziet heb ik zo ieder zijn eigen Health en damage. Zo kan de grootste enemy de meeste aanvallen aan maar kan tevens ook de meeste schade toe brengen als die de finish line heeft behaald*
+*ja deze mechanic heb ik. Mijn resources zijn coins. De coins krijg je  wanneer je een enemy hebt gedood elke enemy heeft ook nog zijn waarde / Valuta Coins.*
 
 ## Product 7: Class Diagram voor volledige codebase 
 
