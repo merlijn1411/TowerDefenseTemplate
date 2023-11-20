@@ -1,7 +1,4 @@
 # TowerDefenseTemplate
-Dit is een template wat door jullie te gebruiken is voor het juist inleveren van alle producten voor de Towerdefense beroepsopdracht. **Verwijder uiteindelijk de template teksten!**
-
-Begin met een korte omschrijving van je towerdefense game en hoe deze werkt. Plaats ook een paar screenshots.
 
 ![My Game](https://github.com/merlijn1411/TowerDefenseTemplate/assets/114576658/459be111-1fbb-4cd8-b112-7eb207d5aa00)
 )
@@ -11,9 +8,6 @@ Begin met een korte omschrijving van je towerdefense game en hoe deze werkt. Pla
 
 
 ## Product 1: "DRY SRP Scripts op GitHub"
-
-Plaats hier minimaal 1 link naar scripts die voldoen aan de eisen van **"Don't Repeat Yourself (DRY)"** en **"Single Responsibility Principle"**.
-Omschrijf hier waarom jij denkt dat je in die scripts aan deze eisen voldoet.
 
 in dit script is zijn enige functie om de healthbar uptedaten "Single Responsibility Principle". via de functie TakeDamage() update hij de healthbar als de functie word aangeroepen. 
 [Link naar Script](https://github.com/merlijn1411/TowerDefenseTemplate/blob/develop/MyTowerDefenseGame/Assets/Scripts/Enemies/EnemyHealth.cs)
@@ -26,15 +20,9 @@ Bijvoorbeeld:
 
 ## Product 2: "Projectmappen op GitHub"
 
-Je commit de mappenstructuur van je unity project op github en verwijst vanuit je readme naar de root map van je project. Met een netjes en goed gestructureerde mappenstructuur en benamingen van files toon je aan dat je dit leerdoel beheerst. 
-
 Dit is de [MIJN ROOT](https://github.com/merlijn1411/TowerDefenseTemplate/tree/develop/MyTowerDefenseGame) folder van mijn unity project.
 
-Zorg dat deze verwijst naar je Develop branch.
-
 ## Product 3: Build op Github
-
-Je maakt in Unity een stabiele “build” van je game waarbij bugs en logs eerst zijn verwijderd. Deze buildfiles upload je in je repository onder releases.  Bij eventuele afwijkingen moeten deze worden gedocumenteerd in de release. (Bijv controller nodig of spelen via netwerk etc..) 
 
 [Release](https://github.com/merlijn1411/TowerDefenseTemplate/tree/master/Build)
 
@@ -61,12 +49,8 @@ voor de duidelijkheid ik gebruik de playerstats script om aan te geven hoeveel l
 
 ## Product 6: Game design met onderbouwing 
 
-Je gebruikt een game design tool om je game design vast te leggen en te communiceren. Daarnaast onderbouw je de design keuzes ten aanzien van “playability” en “replayability” voor je game schriftelijk. 
-
 Voorbeeld van een one page design:
 ![](https://external-preview.redd.it/48mnMpA0TbiihGo4HsJiWrJhK72xeTRwV2o70_AKilw.jpg?auto=webp&s=3a1ae18f0e4fba7a465643987cbe9cf409466e53)
-
-Omschrijf per mechanic welke game design keuzes je hebt gemaakt en waarom je dit hebt gedaan.
 
 *  **De speler kan verschillende types torens kopen en plaatsen.**  
 
