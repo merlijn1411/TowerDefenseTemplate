@@ -1,10 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEditor;
-using System.Linq;
-using System;
 
 public class ShopDoor : MonoBehaviour
 {
@@ -24,31 +18,38 @@ public class ShopDoor : MonoBehaviour
     }
     private void Update()
     {
-    
-        if (Input.GetMouseButtonDown(0))
+        if (!Pause_Controller.GameisPaused)
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            if (Physics.Raycast(ray, out hit))
+            if (Input.GetMouseButtonDown(0))
             {
-                if (hit.collider.gameObject == gameObject)
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+
+                if (Physics.Raycast(ray, out hit))
                 {
-                    if (isShopOpen)
+                    if (hit.collider.gameObject == gameObject)
+                    {
+                        if (isShopOpen)
+                        {
+                            CloseShop();
+                        }
+                        else
+                        {
+                            OpensHop();
+                        }
+                    }
+                    else if (isShopOpen)
                     {
                         CloseShop();
                     }
-                    else
-                    {
-                        OpensHop();
-                    }
-                }
-                else if (isShopOpen)
-                {
-                    CloseShop();
                 }
             }
         }
+        else if (Pause_Controller.GameisPaused)
+        {
+            Debug.Log("kan niet interacten");
+        }
+
     }
 
     public void OpensHop()
@@ -70,8 +71,16 @@ public class ShopDoor : MonoBehaviour
 
     void OnMouseEnter()
     {
-        startcolor = _renderer.material.color;
-        _renderer.material.color = Color.yellow;
+        if (!Pause_Controller.GameisPaused)
+        {
+            startcolor = _renderer.material.color;
+            _renderer.material.color = Color.yellow;
+        }
+        else if (Pause_Controller.GameisPaused)
+        {
+            Debug.Log("kan niet interacten");
+        }
+
     }
     private void OnMouseExit()
     {
