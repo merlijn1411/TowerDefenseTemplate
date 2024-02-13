@@ -26909,7 +26909,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: BuildPlatform (4)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6312553443689258620, guid: e3e5114b71caefd43b7f7aa901814d9f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -27169,7 +27170,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: BuildPlatform (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6312553443689258620, guid: e3e5114b71caefd43b7f7aa901814d9f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -31197,7 +31199,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: BuildPlatform (6)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6312553443689258620, guid: e3e5114b71caefd43b7f7aa901814d9f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -40956,7 +40959,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: BuildPlatform (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6312553443689258620, guid: e3e5114b71caefd43b7f7aa901814d9f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -42543,7 +42547,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: BuildPlatform (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6312553443689258620, guid: e3e5114b71caefd43b7f7aa901814d9f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -42646,7 +42651,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: BuildPlatform
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6312553443689258620, guid: e3e5114b71caefd43b7f7aa901814d9f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
