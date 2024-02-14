@@ -26909,8 +26909,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: BuildPlatform (4)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6312553443689258620, guid: e3e5114b71caefd43b7f7aa901814d9f, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -27170,8 +27169,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: BuildPlatform (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6312553443689258620, guid: e3e5114b71caefd43b7f7aa901814d9f, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -31199,8 +31197,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: BuildPlatform (6)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6312553443689258620, guid: e3e5114b71caefd43b7f7aa901814d9f, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -38035,14 +38032,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Waypoints:
-  - {x: 15.078595, y: -2.7672656, z: 0.00013260543}
-  - {x: 8.107724, y: -2.5293136, z: 0.00013260543}
+  - {x: 15.078595, y: -2.529314, z: 0.00013260543}
+  - {x: 7.150175, y: -2.5293136, z: 0.00013260543}
   - {x: 7.150175, y: 2.4320319, z: 0.00013260543}
-  - {x: -3.618347, y: 2.5143247, z: 0.00013260543}
+  - {x: -4.35504, y: 2.432032, z: 0.00013260543}
   - {x: -4.3550396, y: -3.0793478, z: 0.00013260543}
-  - {x: -12.329008, y: -3.298271, z: 0.00013260543}
+  - {x: -12.63159, y: -3.079348, z: 0.00013260543}
   - {x: -12.631586, y: 10.195872, z: 0.00013260543}
-  startPoint: {fileID: 0}
+  startPoint: {fileID: 1422741043}
 --- !u!4 &1269161150
 Transform:
   m_ObjectHideFlags: 0
@@ -40959,8 +40956,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: BuildPlatform (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6312553443689258620, guid: e3e5114b71caefd43b7f7aa901814d9f, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -42547,8 +42543,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: BuildPlatform (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6312553443689258620, guid: e3e5114b71caefd43b7f7aa901814d9f, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -42647,12 +42642,19 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5865248727048229891, guid: e3e5114b71caefd43b7f7aa901814d9f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5917785557121205845, guid: e3e5114b71caefd43b7f7aa901814d9f, type: 3}
       propertyPath: m_Name
       value: BuildPlatform
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6312553443689258620, guid: e3e5114b71caefd43b7f7aa901814d9f, type: 3}
+    - target: {fileID: 6838480440753848969, guid: e3e5114b71caefd43b7f7aa901814d9f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
