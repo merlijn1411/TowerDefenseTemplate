@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class WaveSpawner2 : MonoBehaviour
 {
@@ -10,13 +12,13 @@ public class WaveSpawner2 : MonoBehaviour
     public Transform spawnpoint;
 
     private Wave currentWave;
-    private int currentWaveNumber;
+    private int currentWaveNumber = 0;
 
     private bool canSpawn = false;
     private float nextSpawnTime;
 
-    public float waveDelay;
-    public float MaxWave;
+    public float waveDelay = 30 ;
+    public int MaxWave;
 
     public Canvas WinScreen;
     public Text WaveNumberT;
@@ -25,44 +27,66 @@ public class WaveSpawner2 : MonoBehaviour
     public void Start()
     {
         WinScreen.enabled = false;
-        currentWaveNumber = 0;
         StartNextWave();
 
         WaveNumberT.text = currentWaveNumber + "/" + MaxWave.ToString();
+        
+        MaxWave = waves.Length; 
     }
 
     public void Update()
     {
-        if (currentWaveNumber < waves.Length)
+        if (currentWaveNumber < waves.Length + 1)
         {
-            currentWave = waves[currentWaveNumber];
-            SpawnWave();
+            if (waveDelay > 0)
+            {
+                waveDelay -= Time.deltaTime;
+            }
+            
+            if (!canSpawn && waveDelay <= 0)
+            {
+                StartNextWave();
+                ResetTimer();
+            }
+            else if (canSpawn)
+            {
+                
+                if (currentWave.NumberEnemies > 0)
+                {
+                    SpawnWave();
+                }
+                else
+                {
+                    canSpawn = false; 
+                }
+            }
         }
-
-        waveDelay -= Time.deltaTime;
-        if (waveDelay <= 0)
+        
+        if (currentWaveNumber == waves.Length - 1)
         {
-            StartNextWave();
-            WaveNumberT.text = currentWaveNumber + "/" + MaxWave.ToString();
-            ResetTimer();
+            waveDelay = 0f;
         }
-
-        int AllEnemies = GameObject.FindGameObjectsWithTag("Enemy").Length;
-        if (AllEnemies <= 0 && currentWaveNumber >= MaxWave)
+        
+        WaveNumberT.text = currentWaveNumber + "/" + MaxWave.ToString();
+        
+        if (currentWaveNumber == MaxWave && GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
         {
-            EndWaves();
+            StopWaves();
         }
     }
 
     public void StartNextWave()
     {
-        currentWaveNumber++;
         if (currentWaveNumber < waves.Length)
         {
             currentWave = waves[currentWaveNumber];
-            canSpawn = true;
+            canSpawn = true; 
+            ResetTimer();
+            currentWaveNumber++;
         }
+        MaxWave = waves.Length; 
     }
+
 
     public void SpawnWave()
     {
@@ -72,7 +96,7 @@ public class WaveSpawner2 : MonoBehaviour
             Instantiate(prefabToSpawn, spawnpoint.position, Quaternion.identity);
             currentWave.NumberEnemies--; 
             nextSpawnTime = Time.time + currentWave.spawnInterval;
-
+        
             if (currentWave.NumberEnemies == 0)
             {
                 canSpawn = false;
@@ -80,7 +104,7 @@ public class WaveSpawner2 : MonoBehaviour
         }
     }
 
-    public void EndWaves()
+    public void StopWaves()
     {
         WinScreen.enabled = true;
     }
