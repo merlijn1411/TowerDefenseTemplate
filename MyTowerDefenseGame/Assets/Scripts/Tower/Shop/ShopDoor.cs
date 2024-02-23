@@ -56,17 +56,12 @@ public class ShopDoor : MonoBehaviour
     {
         isShopOpen = true;
         shopCanvas.enabled = true;
-        //shopCanvas = Instantiate(uiPrefab, transform.position, Quaternion.identity);
     }
 
     public void CloseShop()
     {
         isShopOpen = false;
         shopCanvas.enabled = false;
-        //if (shopCanvas != null)
-        //{
-        //    Destroy(shopCanvas);
-        //}
     }
 
     void OnMouseEnter()
