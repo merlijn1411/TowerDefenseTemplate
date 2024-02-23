@@ -1,7 +1,4 @@
 # TowerDefenseTemplate
-Dit is een template wat door jullie te gebruiken is voor het juist inleveren van alle producten voor de Towerdefense beroepsopdracht. **Verwijder uiteindelijk de template teksten!**
-
-Begin met een korte omschrijving van je towerdefense game en hoe deze werkt. Plaats ook een paar screenshots.
 
 ![My Game](https://github.com/merlijn1411/TowerDefenseTemplate/assets/114576658/459be111-1fbb-4cd8-b112-7eb207d5aa00)
 )
@@ -11,9 +8,6 @@ Begin met een korte omschrijving van je towerdefense game en hoe deze werkt. Pla
 
 
 ## Product 1: "DRY SRP Scripts op GitHub"
-
-Plaats hier minimaal 1 link naar scripts die voldoen aan de eisen van **"Don't Repeat Yourself (DRY)"** en **"Single Responsibility Principle"**.
-Omschrijf hier waarom jij denkt dat je in die scripts aan deze eisen voldoet.
 
 in dit script is zijn enige functie om de healthbar uptedaten "Single Responsibility Principle". via de functie TakeDamage() update hij de healthbar als de functie word aangeroepen. 
 [Link naar Script](https://github.com/merlijn1411/TowerDefenseTemplate/blob/develop/MyTowerDefenseGame/Assets/Scripts/Enemies/EnemyHealth.cs)
@@ -26,15 +20,9 @@ Bijvoorbeeld:
 
 ## Product 2: "Projectmappen op GitHub"
 
-Je commit de mappenstructuur van je unity project op github en verwijst vanuit je readme naar de root map van je project. Met een netjes en goed gestructureerde mappenstructuur en benamingen van files toon je aan dat je dit leerdoel beheerst. 
-
 Dit is de [MIJN ROOT](https://github.com/merlijn1411/TowerDefenseTemplate/tree/develop/MyTowerDefenseGame) folder van mijn unity project.
 
-Zorg dat deze verwijst naar je Develop branch.
-
 ## Product 3: Build op Github
-
-Je maakt in Unity een stabiele “build” van je game waarbij bugs en logs eerst zijn verwijderd. Deze buildfiles upload je in je repository onder releases.  Bij eventuele afwijkingen moeten deze worden gedocumenteerd in de release. (Bijv controller nodig of spelen via netwerk etc..) 
 
 [Release](https://github.com/merlijn1411/TowerDefenseTemplate/tree/master/Build)
 
@@ -61,32 +49,24 @@ voor de duidelijkheid ik gebruik de playerstats script om aan te geven hoeveel l
 
 ## Product 6: Game design met onderbouwing 
 
-Je gebruikt een game design tool om je game design vast te leggen en te communiceren. Daarnaast onderbouw je de design keuzes ten aanzien van “playability” en “replayability” voor je game schriftelijk. 
-
 Voorbeeld van een one page design:
 ![](https://external-preview.redd.it/48mnMpA0TbiihGo4HsJiWrJhK72xeTRwV2o70_AKilw.jpg?auto=webp&s=3a1ae18f0e4fba7a465643987cbe9cf409466e53)
 
-Omschrijf per mechanic welke game design keuzes je hebt gemaakt en waarom je dit hebt gedaan.
+*  **De speler kan verschillende types torens kopen en plaatsen.**  
 
-*  **Mijn Game Bevat BuildPlatforms waar je torens kan plaatsen**  
-
- Mijn torens moeten geplaats worden op een BuildPlatform. Je klikt op de BuildPlatform dan gaat er een shop open en dan kan je uit twee torens kiezen. het adertje is dat je wel genoeg coins nodig hebt om de toren te gaan plaatsten. 
+ ja deze mechanic heb ik. Mijn torens moeten geplaats worden op een BuildPlatform. Je klikt op de BuildPlatform dan gaat er een shop open en dan kan je uit twee torens kiezen. het adertje is dat je wel genoeg coins nodig hebt om de toren te gaan plaatsten. 
 
 *  **Mijn game bevat een “wave” systeem waarmee er onder bepaalde voorwaarden (tijd/vijanden op) nieuwe waves met vijanden het veld in komen.**
 
-*Als het spel begint gaat gelijk de eerste wave van start als alle enemies zijn gespawnd en dat de aangewezen timer op is gaat de volgende wave van start.*
+*ja deze heb ik mechanic. Als het spel begint gaat gelijk de eerste wave van start als alle enemies zijn gespawnd en dat de aangewezen timer op is gaat de volgende wave van start.*
 
-*  **Mijn Game Bevat Enemies met zijn eigen Health en damage.** 
+*  **Er is een "health" systeem waarmee je levens kunt verliezen als vijanden hun doel bereiken en zodoende het spel verliezen.** 
 
-*Ik heb drie verschillende enemies met elke hun eigen health en damage. Op basis van hoe sterk de enemy eruit ziet heb ik zo ieder zijn eigen Health en damage. Zo kan de grootste enemy de meeste aanvallen aan maar kan tevens ook de meeste schade toe brengen als die de finish line heeft behaald.*
+*ja deze mechanic heb ik. Ik heb drie verschillende enemies met elke hun eigen health en damage. Op basis van hoe sterk de enemy eruit ziet heb ik zo ieder zijn eigen Health en damage. Zo kan de grootste enemy de meeste aanvallen aan maar kan tevens ook de meeste schade toe brengen als die de finish line heeft behaald.*
 
 *  **Een “resource” systeem waarmee je resources kunt verdienen waarmee je torens kunt kopen en .evt upgraden.**
 
-*Mijn resources zijn coins. De coins krijg je  wanneer je een enemy hebt gedood elke enemy heeft ook nog zijn waarde / Valuta Coins.*
-
-*  **Mijn Game Bevat Enemies met zijn eigen Health en damage.**
-
-*Ik heb drie verschillende enemies met elke hun eigen health en damage. Op basis van hoe sterk de enemy eruit ziet heb ik zo ieder zijn eigen Health en damage. Zo kan de grootste enemy de meeste aanvallen aan maar kan tevens ook de meeste schade toe brengen als die de finish line heeft behaald*
+*ja deze mechanic heb ik. Mijn resources zijn coins. De coins krijg je  wanneer je een enemy hebt gedood elke enemy heeft ook nog zijn waarde / Valuta Coins.*
 
 ## Product 7: Class Diagram voor volledige codebase 
 
