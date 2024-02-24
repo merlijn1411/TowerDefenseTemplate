@@ -18,17 +18,17 @@ public class WaveSpawner2 : MonoBehaviour
     private float nextSpawnTime;
 
     public float waveDelay = 30 ;
-    public int MaxWave;
+    private int MaxWave;
 
     public Canvas WinScreen;
     public Text WaveNumberT;
 
+    public GameObject StartWave;
 
     public void Start()
     {
         WinScreen.enabled = false;
-        StartNextWave();
-
+        StartWave.SetActive(true);
         WaveNumberT.text = currentWaveNumber + "/" + MaxWave.ToString();
         
         MaxWave = waves.Length; 
@@ -46,7 +46,6 @@ public class WaveSpawner2 : MonoBehaviour
             if (!canSpawn && waveDelay <= 0)
             {
                 StartNextWave();
-                ResetTimer();
             }
             else if (canSpawn)
             {
@@ -79,6 +78,7 @@ public class WaveSpawner2 : MonoBehaviour
     {
         if (currentWaveNumber < waves.Length)
         {
+            StartWave.SetActive(false);
             currentWave = waves[currentWaveNumber];
             canSpawn = true; 
             ResetTimer();
@@ -99,6 +99,7 @@ public class WaveSpawner2 : MonoBehaviour
         
             if (currentWave.NumberEnemies == 0)
             {
+                StartWave.SetActive(true);
                 canSpawn = false;
             }
         }
