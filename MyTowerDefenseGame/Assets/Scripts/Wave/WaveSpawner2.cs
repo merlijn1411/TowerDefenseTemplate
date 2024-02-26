@@ -9,7 +9,7 @@ using Random = UnityEngine.Random;
 public class WaveSpawner2 : MonoBehaviour
 {
     public Wave[] waves;
-    public Transform spawnpoint;
+    public Transform spawnPoint;
 
     private Wave currentWave;
     private int currentWaveNumber = 0;
@@ -17,21 +17,23 @@ public class WaveSpawner2 : MonoBehaviour
     private bool canSpawn = false;
     private float nextSpawnTime;
 
-    public float waveDelay = 30 ;
-    private int MaxWave;
+    public float waveDelay = 15 ;
+    public static float waveTimer;
+    private int maxWave;
 
-    public Canvas WinScreen;
-    public Text WaveNumberT;
+    public Canvas winScreen;
+    public Text waveNumberT;
 
-    public GameObject StartWave;
+    public GameObject startButton;
 
     public void Start()
     {
-        WinScreen.enabled = false;
-        StartWave.SetActive(true);
-        WaveNumberT.text = currentWaveNumber + "/" + MaxWave.ToString();
-        
-        MaxWave = waves.Length; 
+        winScreen.enabled = false;
+        startButton.SetActive(true);
+        waveNumberT.text = currentWaveNumber + "/" + maxWave.ToString();
+
+        waveTimer = waveDelay;
+        maxWave = waves.Length; 
     }
 
     public void Update()
@@ -61,14 +63,9 @@ public class WaveSpawner2 : MonoBehaviour
             }
         }
         
-        if (currentWaveNumber == waves.Length - 1)
-        {
-            waveDelay = 0f;
-        }
+        waveNumberT.text = currentWaveNumber + "/" + maxWave.ToString();
         
-        WaveNumberT.text = currentWaveNumber + "/" + MaxWave.ToString();
-        
-        if (currentWaveNumber == MaxWave && GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
+        if (currentWaveNumber == maxWave && GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
         {
             StopWaves();
         }
@@ -78,13 +75,13 @@ public class WaveSpawner2 : MonoBehaviour
     {
         if (currentWaveNumber < waves.Length)
         {
-            StartWave.SetActive(false);
+            startButton.SetActive(false);
             currentWave = waves[currentWaveNumber];
+            StopTimer();
             canSpawn = true; 
-            ResetTimer();
             currentWaveNumber++;
         }
-        MaxWave = waves.Length; 
+        maxWave = waves.Length; 
     }
 
 
@@ -93,24 +90,30 @@ public class WaveSpawner2 : MonoBehaviour
         if (canSpawn && Time.time >= nextSpawnTime && currentWave.NumberEnemies > 0)
         {
             GameObject prefabToSpawn = currentWave.EnemyPrefabs[Random.Range(0, currentWave.EnemyPrefabs.Length)];
-            Instantiate(prefabToSpawn, spawnpoint.position, Quaternion.identity);
+            Instantiate(prefabToSpawn, spawnPoint.position, Quaternion.identity);
             currentWave.NumberEnemies--; 
             nextSpawnTime = Time.time + currentWave.spawnInterval;
         
             if (currentWave.NumberEnemies == 0)
             {
-                StartWave.SetActive(true);
+                startButton.SetActive(true);
                 canSpawn = false;
+                ResetTimer();
             }
         }
     }
 
     public void StopWaves()
     {
-        WinScreen.enabled = true;
+        winScreen.enabled = true;
     }
     public void ResetTimer()
     {
         waveDelay = 30;
+    }
+
+    public void StopTimer()
+    {
+        waveDelay = 0;
     }
 }
