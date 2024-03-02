@@ -40423,20 +40423,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - waveName: 0
-    NumberEnemies: 12
-    EnemyPrefabs:
-    - {fileID: 5036571535899570127, guid: e8ac24acbdb91154fa6af3bfe5c79b8c, type: 3}
+    enemyWaveData:
+    - enemyPrefab: {fileID: 5036571535899570127, guid: e8ac24acbdb91154fa6af3bfe5c79b8c, type: 3}
+      numberOfEnemies: 8
     spawnInterval: 2
   - waveName: 1
-    NumberEnemies: 15
-    EnemyPrefabs:
-    - {fileID: 5036571535899570127, guid: e8ac24acbdb91154fa6af3bfe5c79b8c, type: 3}
+    enemyWaveData:
+    - enemyPrefab: {fileID: 5036571535899570127, guid: e8ac24acbdb91154fa6af3bfe5c79b8c, type: 3}
+      numberOfEnemies: 10
     spawnInterval: 1.5
-  - waveName: 1
-    NumberEnemies: 15
-    EnemyPrefabs:
-    - {fileID: 5036571535899570127, guid: e8ac24acbdb91154fa6af3bfe5c79b8c, type: 3}
-    - {fileID: 1403540958985464598, guid: 0424febd03971f04f88f5a9884e12fd5, type: 3}
+  - waveName: 2
+    enemyWaveData:
+    - enemyPrefab: {fileID: 5036571535899570127, guid: e8ac24acbdb91154fa6af3bfe5c79b8c, type: 3}
+      numberOfEnemies: 9
+    - enemyPrefab: {fileID: 1403540958985464598, guid: 0424febd03971f04f88f5a9884e12fd5, type: 3}
+      numberOfEnemies: 9
     spawnInterval: 1.5
   spawnPoint: {fileID: 1422741043}
   waveDelay: 15
