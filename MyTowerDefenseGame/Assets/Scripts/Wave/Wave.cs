@@ -6,7 +6,13 @@ using UnityEngine;
 public class Wave 
 {
     public string waveName;
-    public int NumberEnemies;
-    public GameObject[] EnemyPrefabs;
+    public EnemyWaveData[] enemyWaveData;
     public float spawnInterval;
+
+    [System.Serializable]
+    public struct EnemyWaveData
+    {
+        public GameObject enemyPrefab;
+        public int numberOfEnemies;
+    }
 }

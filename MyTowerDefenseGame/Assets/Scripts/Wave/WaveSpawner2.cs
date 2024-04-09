@@ -1,15 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
-using Random = UnityEngine.Random;
 
 public class WaveSpawner2 : MonoBehaviour
 {
-    public Wave[] waves;
-    public Transform spawnpoint;
+    [SerializeField]private Wave[] waves;
+    [SerializeField]private Transform spawnPoint;
 
     private Wave currentWave;
     private int currentWaveNumber = 0;
@@ -17,21 +15,23 @@ public class WaveSpawner2 : MonoBehaviour
     private bool canSpawn = false;
     private float nextSpawnTime;
 
-    public float waveDelay = 30 ;
-    public int MaxWave;
+    [SerializeField]private float waveDelay = 15 ;
+    public static float waveTimer;
+    private int maxWave;
 
-    public Canvas WinScreen;
-    public Text WaveNumberT;
+    [SerializeField]private Canvas winScreen;
+    [SerializeField]private Text waveNumberT;
 
+    [SerializeField]private GameObject startButton;
 
     public void Start()
     {
-        WinScreen.enabled = false;
-        StartNextWave();
+        winScreen.enabled = false;
+        startButton.SetActive(true);
+        waveNumberT.text = currentWaveNumber + "/" + maxWave.ToString();
 
-        WaveNumberT.text = currentWaveNumber + "/" + MaxWave.ToString();
-        
-        MaxWave = waves.Length; 
+        waveTimer = waveDelay;
+        maxWave = waves.Length; 
     }
 
     public void Update()
@@ -46,70 +46,94 @@ public class WaveSpawner2 : MonoBehaviour
             if (!canSpawn && waveDelay <= 0)
             {
                 StartNextWave();
-                ResetTimer();
             }
             else if (canSpawn)
             {
-                
-                if (currentWave.NumberEnemies > 0)
+                if (AnyEnemyLeftToSpawn())
                 {
                     SpawnWave();
                 }
                 else
                 {
-                    canSpawn = false; 
+                    canSpawn = false;
                 }
             }
         }
-        
-        if (currentWaveNumber == waves.Length - 1)
-        {
-            waveDelay = 0f;
-        }
-        
-        WaveNumberT.text = currentWaveNumber + "/" + MaxWave.ToString();
-        
-        if (currentWaveNumber == MaxWave && GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
-        {
+
+        waveNumberT.text = currentWaveNumber + "/" + maxWave.ToString();
+
+        if (currentWaveNumber == maxWave && GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
             StopWaves();
-        }
+
+        if (currentWaveNumber == maxWave)
+            startButton.SetActive(false);
+        
     }
 
     public void StartNextWave()
     {
         if (currentWaveNumber < waves.Length)
         {
+            startButton.SetActive(false);
             currentWave = waves[currentWaveNumber];
+            StopTimer();
             canSpawn = true; 
-            ResetTimer();
             currentWaveNumber++;
         }
-        MaxWave = waves.Length; 
+        maxWave = waves.Length; 
     }
 
 
     public void SpawnWave()
     {
-        if (canSpawn && Time.time >= nextSpawnTime && currentWave.NumberEnemies > 0)
+        if (canSpawn && Time.time >= nextSpawnTime && AnyEnemyLeftToSpawn())
         {
-            GameObject prefabToSpawn = currentWave.EnemyPrefabs[Random.Range(0, currentWave.EnemyPrefabs.Length)];
-            Instantiate(prefabToSpawn, spawnpoint.position, Quaternion.identity);
-            currentWave.NumberEnemies--; 
-            nextSpawnTime = Time.time + currentWave.spawnInterval;
-        
-            if (currentWave.NumberEnemies == 0)
+            for (int i = 0; i < currentWave.enemyWaveData.Length; i++)
+            {
+                var enemyData = currentWave.enemyWaveData[i];
+                if (enemyData.numberOfEnemies > 0)
+                {
+                    GameObject prefabToSpawn = enemyData.enemyPrefab;
+                    Instantiate(prefabToSpawn, spawnPoint.position, Quaternion.identity);
+                    currentWave.enemyWaveData[i].numberOfEnemies--; 
+                    
+                    nextSpawnTime = Time.time + currentWave.spawnInterval;
+                    break; 
+                }
+            }
+            
+            if (!AnyEnemyLeftToSpawn())
             {
                 canSpawn = false;
+                startButton.SetActive(true);
+                ResetTimer();
             }
         }
     }
-
-    public void StopWaves()
+    
+    private bool AnyEnemyLeftToSpawn()
     {
-        WinScreen.enabled = true;
+        foreach (var enemyData in currentWave.enemyWaveData)
+        {
+            if (enemyData.numberOfEnemies > 0)
+            {
+                return true;
+            }
+        }
+        return false;
     }
-    public void ResetTimer()
+
+    private void StopWaves()
     {
-        waveDelay = 30;
+        winScreen.enabled = true;
+    }
+    private void ResetTimer()
+    {
+        waveDelay = 15;
+    }
+
+    private void StopTimer()
+    {
+        waveDelay = 0;
     }
 }
