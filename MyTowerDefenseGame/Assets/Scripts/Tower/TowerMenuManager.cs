@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TowerMenuSpawner : MonoBehaviour
+public class TowerMenuManager : MonoBehaviour
 {
     [SerializeField] private List<TowerData> towerList;
     [SerializeField] private GameObject menuParent;
