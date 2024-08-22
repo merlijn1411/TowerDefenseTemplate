@@ -171,6 +171,7 @@ GameObject:
   - component: {fileID: 1324903755795556128}
   - component: {fileID: 1324903755795556133}
   - component: {fileID: 3862343180239537433}
+  - component: {fileID: 909899390445052474}
   m_Layer: 5
   m_Name: UIShop
   m_TagString: Untagged
@@ -274,6 +275,22 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 0
+--- !u!114 &909899390445052474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1324903755795556131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4b9495a87f72064d93d893a6a88092d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerList:
+  - {fileID: 11400000, guid: 5225b50831b170144a3a1b69fec60912, type: 2}
+  - {fileID: 11400000, guid: b281a0319dff81e42a368f11c799df39, type: 2}
+  menuParent: {fileID: 5917785557121205845}
 --- !u!1 &2557190512973718681
 GameObject:
   m_ObjectHideFlags: 0
@@ -596,7 +613,6 @@ GameObject:
   - component: {fileID: 5917785557121205847}
   - component: {fileID: 5917785557121205848}
   - component: {fileID: 5917785557121205851}
-  - component: {fileID: 6312553443689258620}
   m_Layer: 0
   m_Name: BuildPlatform
   m_TagString: BuildPlatform
@@ -611,14 +627,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5917785557121205845}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -10.871796, y: 7.131096, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1324903755795556130}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5917785557121205847
 SpriteRenderer:
@@ -707,22 +723,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6312553443689258620
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5917785557121205845}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83017b6336ebfa441a9abcfa107c3454, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towers:
-  - {fileID: 341451224905261313, guid: aa1e155314c455e438693661472e98dc, type: 3}
-  - {fileID: 1209419620768415094, guid: ccb73e940e7be754991dd9babf4cb934, type: 3}
-  towerCosts: 5a00000082000000
 --- !u!1 &6838480440753848971
 GameObject:
   m_ObjectHideFlags: 0
@@ -844,19 +844,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6838480440753848968}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6312553443689258620}
-        m_TargetAssemblyTypeName: Blueprint, Assembly-CSharp
-        m_MethodName: TowerSelected
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &7901954249219691417
 GameObject:
   m_ObjectHideFlags: 0
@@ -1054,16 +1042,4 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8879112966237930184}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6312553443689258620}
-        m_TargetAssemblyTypeName: Blueprint, Assembly-CSharp
-        m_MethodName: TowerSelected
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []

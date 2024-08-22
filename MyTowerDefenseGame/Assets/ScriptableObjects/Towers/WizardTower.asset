@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad797d72740e24c43bab482d62d9908c, type: 3}
+  m_Name: WizardTower
+  m_EditorClassIdentifier: 
+  TowerName: WizardTower
+  Cost: 130
+  AttackRange: 5
+  AttackCooldown: 2
+  TowerIcon: {fileID: -104972613, guid: a5a696fe3b1c17c4ea9d0f8e3367dad2, type: 3}
+  TowerPrefab: {fileID: 1209419620768415094, guid: ccb73e940e7be754991dd9babf4cb934, type: 3}
