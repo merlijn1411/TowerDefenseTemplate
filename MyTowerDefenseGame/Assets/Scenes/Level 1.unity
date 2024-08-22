@@ -38262,17 +38262,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5865248727048229891, guid: fb1d4a3630b6dfb45b0cbca1a30ea235, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 1324903755795556135, guid: fb1d4a3630b6dfb45b0cbca1a30ea235, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 777954636}
     - target: {fileID: 5917785557121205845, guid: fb1d4a3630b6dfb45b0cbca1a30ea235, type: 3}
       propertyPath: m_Name
       value: BuildPlatform
-      objectReference: {fileID: 0}
-    - target: {fileID: 6838480440753848969, guid: fb1d4a3630b6dfb45b0cbca1a30ea235, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

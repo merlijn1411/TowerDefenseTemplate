@@ -171,6 +171,7 @@ GameObject:
   - component: {fileID: 1324903755795556128}
   - component: {fileID: 1324903755795556133}
   - component: {fileID: 3862343180239537433}
+  - component: {fileID: 909899390445052474}
   m_Layer: 5
   m_Name: UIShop
   m_TagString: Untagged
@@ -274,6 +275,22 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 0
+--- !u!114 &909899390445052474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1324903755795556131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4b9495a87f72064d93d893a6a88092d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerList:
+  - {fileID: 11400000, guid: 5225b50831b170144a3a1b69fec60912, type: 2}
+  - {fileID: 11400000, guid: b281a0319dff81e42a368f11c799df39, type: 2}
+  menuParent: {fileID: 5917785557121205845}
 --- !u!1 &2557190512973718681
 GameObject:
   m_ObjectHideFlags: 0
