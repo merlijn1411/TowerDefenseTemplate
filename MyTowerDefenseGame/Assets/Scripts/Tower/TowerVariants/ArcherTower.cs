@@ -1,9 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.Diagnostics;
-using UnityEngine.Audio;
+
 public class ArcherTower : MonoBehaviour
 {
     public float attackRange = 5f; 
