@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class NpcAnimationController : MonoBehaviour
 {
-    private Animator animator;
-    private Vector3 lastPosition;
+    private Animator _animator;
+    private Vector3 _lastPosition;
     
     private string _up = "MoveUp";
     private string _down = "MoveDown";
@@ -12,14 +12,14 @@ public class NpcAnimationController : MonoBehaviour
 
     private void Start()
     {
-        animator = GetComponent<Animator>();
+        _animator = GetComponent<Animator>();
         
-        lastPosition = transform.position;
+        _lastPosition = transform.position;
     }
 
     private void Update()
     {
-        var direction = (transform.position - lastPosition).normalized;
+        var direction = (transform.position - _lastPosition).normalized;
         NpcDirectionMvtTrigger(direction);
     }
 
@@ -50,13 +50,13 @@ public class NpcAnimationController : MonoBehaviour
     
     private void SetDirectionTrigger(string direction)
     {
-        lastPosition = transform.position;
+        _lastPosition = transform.position;
         
-        animator.ResetTrigger(_up);
-        animator.ResetTrigger(_down);
-        animator.ResetTrigger(_left);
-        animator.ResetTrigger(_right);
+        _animator.ResetTrigger(_up);
+        _animator.ResetTrigger(_down);
+        _animator.ResetTrigger(_left);
+        _animator.ResetTrigger(_right);
         
-        animator.SetTrigger(direction);
+        _animator.SetTrigger(direction);
     }
 }
