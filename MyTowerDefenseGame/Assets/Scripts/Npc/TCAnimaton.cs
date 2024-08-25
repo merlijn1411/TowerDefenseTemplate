@@ -2,16 +2,18 @@ using UnityEngine;
 
 public class TCAnimaton : NpcAnimationController
 {
+    private ArcherTower _archerTower;
     private void Start()
     {
-        animator = GetComponent<Animator>();
+        animator = GetComponentInParent<Animator>();
+        _archerTower = GetComponent<ArcherTower>();
         
-        LastPosition = transform.position;
+        LastPosition = _archerTower.target.position;
     }
-
-    // Update is called once per frame
-    void Update()
+    
+    private void Update()
     {
-        
+        var direction = (LastPosition - _archerTower.target.position).normalized;
+        NpcDirectionMvtTrigger(direction);
     }
 }

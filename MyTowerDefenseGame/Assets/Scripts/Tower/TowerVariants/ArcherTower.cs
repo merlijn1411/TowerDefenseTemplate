@@ -7,7 +7,7 @@ public class ArcherTower : MonoBehaviour
     public GameObject ArrowPrefab; 
     public Transform firePoint; 
 
-    private Transform target; 
+    [HideInInspector] public Transform target; 
     private float lastAttackTime;
 
     public AudioSource fireSource;
@@ -31,12 +31,12 @@ public class ArcherTower : MonoBehaviour
 
     private void FindNearestEnemy()
     {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        var enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
-        float shortestDistance = Mathf.Infinity;
+        var shortestDistance = Mathf.Infinity;
         Transform nearestEnemy = null;
 
-        foreach (GameObject enemy in enemies)
+        foreach (var enemy in enemies)
         {
             float distanceToEnemy = Vector2.Distance(transform.position, enemy.transform.position);
 
@@ -47,25 +47,17 @@ public class ArcherTower : MonoBehaviour
             }
         }
 
-        if(nearestEnemy != null && shortestDistance <= attackRange)
+        if(nearestEnemy is not null && shortestDistance <= attackRange)
         {
             target = nearestEnemy;
         }
-        else
-        {
-            target = null;
-        }
-
     }
 
     private void Shoot()
     {
-        GameObject bullet = Instantiate(ArrowPrefab, firePoint.position, firePoint.rotation);
-        ProjectileArrow ArrowScript = bullet.GetComponent<ProjectileArrow>();
+        var bullet = Instantiate(ArrowPrefab, firePoint.position, firePoint.rotation);
+        var ArrowScript = bullet.GetComponent<ProjectileArrow>();
 
-        if (ArrowScript != null)
-        {
-            ArrowScript.Seek(target);
-        }
+        ArrowScript?.Seek(target);
     }
 }

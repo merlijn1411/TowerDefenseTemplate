@@ -5,10 +5,11 @@ public class NpcAnimationController : MonoBehaviour
     [HideInInspector]public Animator animator;
     [HideInInspector]public Vector3 LastPosition;
     
-    private string _up = "MoveUp";
-    private string _down = "MoveDown";
-    private string _left = "MoveLeft";
-    private string _right = "MoveRight";
+    private string _up = "FaceUp";
+    private string _down = "FaceDown";
+    private string _left = "FaceLeft";
+    private string _right = "FaceRight";
+    private string _idle = "Idle";
     
     protected void NpcDirectionMvtTrigger(Vector3 direction)
     {
@@ -25,7 +26,7 @@ public class NpcAnimationController : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("The animation want to do a Idle");
+            animator.SetTrigger(_idle);
         }
     }
     

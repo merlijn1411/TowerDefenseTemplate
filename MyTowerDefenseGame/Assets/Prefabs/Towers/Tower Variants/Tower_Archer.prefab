@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 341451224165637831}
   - component: {fileID: 341451224165637830}
   - component: {fileID: 4091847501329159184}
-  - component: {fileID: 8808411535852846476}
+  - component: {fileID: 623054595649099306}
   m_Layer: 0
   m_Name: Archer
   m_TagString: Untagged
@@ -108,7 +108,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8808411535852846476
+--- !u!114 &623054595649099306
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,9 +117,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 341451224165637848}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3529ee18a948c0498404be18aba4881, type: 3}
+  m_Script: {fileID: 11500000, guid: 19e7ae7c87810b24fb32909876a6533d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  LastPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &341451224905261313
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,6 +225,7 @@ MonoBehaviour:
   attackCooldown: 1
   ArrowPrefab: {fileID: 6145333639873479387, guid: cbb5720ae82492644a6930e789b251b4, type: 3}
   firePoint: {fileID: 341451224165637831}
+  target: {fileID: 0}
   fireSource: {fileID: -8176132471930957578}
 --- !u!82 &-8176132471930957578
 AudioSource:
