@@ -347,7 +347,7 @@ GameObject:
   - component: {fileID: 5036571535899570115}
   - component: {fileID: -7385335663104135060}
   - component: {fileID: 1007371038653844046}
-  - component: {fileID: 6519821270103385024}
+  - component: {fileID: 5414506766689506429}
   - component: {fileID: -405296943295152398}
   - component: {fileID: -8102248229239307504}
   m_Layer: 9
@@ -489,7 +489,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 1
   Worth: 5
---- !u!114 &6519821270103385024
+--- !u!114 &5414506766689506429
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -498,9 +498,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5036571535899570127}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3529ee18a948c0498404be18aba4881, type: 3}
+  m_Script: {fileID: 11500000, guid: 5587c86f0f4eb4d4e917880dd1d2c7b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Animator: {fileID: 0}
+  LastPosition: {x: 0, y: 0, z: 0}
 --- !u!61 &-405296943295152398
 BoxCollider2D:
   m_ObjectHideFlags: 0
