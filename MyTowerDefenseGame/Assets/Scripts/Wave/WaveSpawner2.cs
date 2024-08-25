@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,13 +8,13 @@ public class WaveSpawner2 : MonoBehaviour
 
     private Wave currentWave;
     private int currentWaveNumber = 0;
-
+    private int maxWave;
+    
     private bool canSpawn = false;
     private float nextSpawnTime;
 
-    [SerializeField]private float waveDelay = 15 ;
-    public static float waveTimer;
-    private int maxWave;
+    public float waveDelay;
+    
 
     [SerializeField]private Canvas winScreen;
     [SerializeField]private Text waveNumberT;
@@ -29,8 +26,7 @@ public class WaveSpawner2 : MonoBehaviour
         winScreen.enabled = false;
         startButton.SetActive(true);
         waveNumberT.text = currentWaveNumber + "/" + maxWave.ToString();
-
-        waveTimer = waveDelay;
+        
         maxWave = waves.Length; 
     }
 

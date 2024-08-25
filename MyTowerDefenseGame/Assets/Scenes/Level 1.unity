@@ -40690,6 +40690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d3bc271eb7c9ab40998b63d81b6d54d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waveSpawner2: {fileID: 1673604616}
   fillCircle: {fileID: 146462545}
   maxTimer: 15
 --- !u!4 &1702418997 stripped
