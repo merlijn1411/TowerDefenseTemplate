@@ -23,6 +23,7 @@ public class NpcAnimationController : MonoBehaviour
             {
                 SetDirectionTrigger(direction.y > 0 ? _up : _down);
             }
+            
         }
         else
         {
@@ -38,6 +39,7 @@ public class NpcAnimationController : MonoBehaviour
         animator.ResetTrigger(_down);
         animator.ResetTrigger(_left);
         animator.ResetTrigger(_right);
+        animator.ResetTrigger(_idle);
         
         animator.SetTrigger(direction);
     }

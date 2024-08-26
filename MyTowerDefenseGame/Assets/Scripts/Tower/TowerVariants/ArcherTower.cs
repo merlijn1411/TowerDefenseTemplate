@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class ArcherTower : MonoBehaviour
@@ -7,8 +8,10 @@ public class ArcherTower : MonoBehaviour
     public GameObject ArrowPrefab; 
     public Transform firePoint; 
 
-    [HideInInspector] public Transform target; 
+    private Transform target; 
     private float lastAttackTime;
+
+    private TCAnimaton _tCAnimaton;
 
     public AudioSource fireSource;
 
@@ -17,16 +20,26 @@ public class ArcherTower : MonoBehaviour
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, attackRange);
     }
+
+    private void Start()
+    {
+        _tCAnimaton = GetComponentInChildren<TCAnimaton>();
+    }
+
     private void Update()
     {
         FindNearestEnemy();
 
-        if (target != null && Time.time - lastAttackTime >= attackCooldown)
+        if (target&& Time.time - lastAttackTime >= attackCooldown)
         {
+            _tCAnimaton.StartAnimation(target);
             fireSource.Play();
             Shoot();
             lastAttackTime = Time.time;
         }
+        else
+            _tCAnimaton.StartAnimation(null); 
+        
     }
 
     private void FindNearestEnemy()
@@ -53,11 +66,17 @@ public class ArcherTower : MonoBehaviour
         }
     }
 
+    public bool EnemyInRange(Transform enemy)
+    {
+        var distanceToEnemy = Vector2.Distance(transform.position, enemy.position);
+        return distanceToEnemy < attackRange;
+    }
+
     private void Shoot()
     {
         var bullet = Instantiate(ArrowPrefab, firePoint.position, firePoint.rotation);
-        var ArrowScript = bullet.GetComponent<ProjectileArrow>();
+        var arrowScript = bullet.GetComponent<ProjectileArrow>();
 
-        ArrowScript?.Seek(target);
+        arrowScript?.Seek(target);
     }
 }

@@ -9,7 +9,7 @@ public class EnemyAnimation : NpcAnimationController
         LastPosition = transform.position;
     }
     
-    private void Update()
+    private void LateUpdate()
     {
         var direction = (transform.position - LastPosition).normalized;
         NpcDirectionMvtTrigger(direction);
