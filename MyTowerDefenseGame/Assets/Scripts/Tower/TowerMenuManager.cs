@@ -10,10 +10,10 @@ public class TowerMenuManager : MonoBehaviour
     
     private void Start()
     {
-        InizializeButtons();
+        InitializeButtons();
     }
 
-    private void InizializeButtons()
+    private void InitializeButtons()
     {
         _menuButtons = GetComponentsInChildren<Button>();
         
