@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 
 public class ArcherTower : TowerShootCalculation
@@ -12,10 +13,10 @@ public class ArcherTower : TowerShootCalculation
 
     private AudioSource _shootAudioSource;
 
-    private void OnDrawGizmosSelected()
+    private void OnDrawGizmos()
     {
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, towerData.AttackRange);
+        Handles.color = Color.green;
+        Handles.DrawWireDisc(transform.position,transform.forward, towerData.AttackRange);
     }
 
     private void Start()
