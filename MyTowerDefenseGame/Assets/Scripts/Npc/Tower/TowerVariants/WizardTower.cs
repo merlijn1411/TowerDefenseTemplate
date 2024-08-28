@@ -62,7 +62,7 @@ public class WizardTower : MonoBehaviour
     private void Shoot()
     {
         GameObject FireBall = Instantiate(FireBallPrefab, firePoint.position, firePoint.rotation);
-        ProjectileFireball FireballScript = FireBall.GetComponent<ProjectileFireball>();
+        Fireball FireballScript = FireBall.GetComponent<Fireball>();
 
         if (FireballScript != null)
         {

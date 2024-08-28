@@ -75,7 +75,7 @@ public class ArcherTower : MonoBehaviour
     private void Shoot()
     {
         var bullet = Instantiate(ArrowPrefab, firePoint.position, firePoint.rotation);
-        var arrowScript = bullet.GetComponent<ProjectileArrow>();
+        var arrowScript = bullet.GetComponent<Arrow>();
 
         arrowScript?.Seek(target);
     }
