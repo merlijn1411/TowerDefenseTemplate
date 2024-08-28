@@ -18,3 +18,4 @@ MonoBehaviour:
   AttackCooldown: 1
   TowerIcon: {fileID: 21300000, guid: 3cc6249d82abe2f4283069309b0fd1e9, type: 3}
   TowerPrefab: {fileID: 341451224905261313, guid: aa1e155314c455e438693661472e98dc, type: 3}
+  ProjectillePrefab: {fileID: 6145333639873479387, guid: cbb5720ae82492644a6930e789b251b4, type: 3}

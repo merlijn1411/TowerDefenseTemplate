@@ -1,72 +1,43 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Audio;
 
-public class WizardTower : MonoBehaviour
+public class WizardTower : TowerShootCalculation
 {
-    public float attackRange = 5f;
-    public float attackCooldown = 2f;
-    public GameObject FireBallPrefab;
-    public Transform firePoint;
+    [SerializeField] private TowerData towerData;
+    [SerializeField] private Transform firePoint;
 
     private Transform target;
     private float lastAttackTime;
 
-    public AudioSource fireBallSound;
+    private AudioSource _shootAudioSource;
 
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, attackRange);
+        Gizmos.DrawWireSphere(transform.position, towerData.AttackRange);
     }
+
+    private void Start()
+    {
+        _shootAudioSource = GetComponent<AudioSource>();
+    }
+
     private void Update()
     {
-        FindNearestEnemy();
-        if (target != null && Time.time - lastAttackTime >= attackCooldown)
+        target = FindNearestEnemy(towerData.AttackRange);
+        
+        if (target&& Time.time - lastAttackTime >= towerData.AttackCooldown)
         {
-            fireBallSound.Play();
+            _shootAudioSource.Play();
             Shoot();
             lastAttackTime = Time.time;
         }
     }
-
-    private void FindNearestEnemy()
-    {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-
-        float shortestDistance = Mathf.Infinity;
-        Transform nearestEnemy = null;
-
-        foreach (GameObject enemy in enemies)
-        {
-            float distanceToEnemy = Vector2.Distance(transform.position, enemy.transform.position);
-
-            if (distanceToEnemy < shortestDistance)
-            {
-                shortestDistance = distanceToEnemy;
-                nearestEnemy = enemy.transform;
-            }
-        }
-
-        if (nearestEnemy != null && shortestDistance <= attackRange)
-        {
-            target = nearestEnemy;
-        }
-        else
-        {
-            target = null;
-        }
-    }
-
+    
     private void Shoot()
     {
-        GameObject FireBall = Instantiate(FireBallPrefab, firePoint.position, firePoint.rotation);
-        Fireball FireballScript = FireBall.GetComponent<Fireball>();
+        var projectille = Instantiate(towerData.ProjectillePrefab, firePoint.position, firePoint.rotation);
+        var projectilleScript = projectille.GetComponent<Fireball>();
 
-        if (FireballScript != null)
-        {
-            FireballScript.Seek(target);
-        }
+        projectilleScript?.Seek(target);
     }
 }

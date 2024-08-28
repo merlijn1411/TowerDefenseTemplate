@@ -21,8 +21,3 @@ public class Projectille : MonoBehaviour
         }
     }
 }
-
-public interface IProjectileCalculationTravel
-{
-    public void CalculationTravel();
-}

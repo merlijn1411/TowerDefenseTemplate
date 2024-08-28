@@ -41,7 +41,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1209419620768415097}
-  - component: {fileID: 1209419620768415092}
   - component: {fileID: 1209419620768415093}
   - component: {fileID: 5537901934178089059}
   - component: {fileID: 2340592397777682567}
@@ -60,22 +59,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1209419620768415094}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.1887876, y: -1.8360288, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1209419619935011939}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!222 &1209419620768415092
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1209419620768415094}
-  m_CullTransparentMesh: 1
 --- !u!212 &1209419620768415093
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -140,11 +131,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8aba201d42c734049860857edaac24b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 5
-  attackCooldown: 2
-  FireBallPrefab: {fileID: 2126777522699652849, guid: 8e23c8a6abe6d134c83048555363f98a, type: 3}
+  towerData: {fileID: 11400000, guid: b281a0319dff81e42a368f11c799df39, type: 2}
   firePoint: {fileID: 1209419621122988147}
-  fireBallSound: {fileID: 2340592397777682567}
 --- !u!82 &2340592397777682567
 AudioSource:
   m_ObjectHideFlags: 0
