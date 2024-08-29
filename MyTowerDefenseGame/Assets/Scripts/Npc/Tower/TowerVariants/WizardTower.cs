@@ -1,22 +1,16 @@
 using UnityEngine;
 using UnityEditor;
 
-public class WizardTower : TowerShootCalculation
+public class WizardTower : Tower
 {
-    [SerializeField] private TowerData towerData;
-    [SerializeField] private Transform firePoint;
-
-    private Transform target;
-    private float lastAttackTime;
-
     private AudioSource _shootAudioSource;
 
     private void OnDrawGizmos()
     {
         Handles.color = Color.green;
-        Handles.DrawWireDisc(transform.position,transform.forward, towerData.AttackRange);
+        Handles.DrawWireDisc(transform.position,transform.forward, TowerData.AttackRange);
     }
-
+    
     private void Start()
     {
         _shootAudioSource = GetComponent<AudioSource>();
@@ -24,21 +18,21 @@ public class WizardTower : TowerShootCalculation
 
     private void Update()
     {
-        target = FindNearestEnemy(towerData.AttackRange);
+        Target = FindNearestEnemy(TowerData.AttackRange);
         
-        if (target&& Time.time - lastAttackTime >= towerData.AttackCooldown)
+        if (Target&& Time.time - LastAttackTime >= TowerData.AttackCooldown)
         {
             _shootAudioSource.Play();
             Shoot();
-            lastAttackTime = Time.time;
+            LastAttackTime = Time.time;
         }
     }
     
     private void Shoot()
     {
-        var projectille = Instantiate(towerData.ProjectillePrefab, firePoint.position, firePoint.rotation);
+        var projectille = Instantiate(TowerData.ProjectillePrefab, FirePoint.position, FirePoint.rotation);
         var projectilleScript = projectille.GetComponent<Fireball>();
 
-        projectilleScript?.Seek(target);
+        projectilleScript?.Seek(Target);
     }
 }
