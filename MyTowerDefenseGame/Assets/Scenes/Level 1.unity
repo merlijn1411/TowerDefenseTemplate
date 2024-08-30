@@ -42208,8 +42208,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f9ba097b33e1114cadb5fd0bda7cb61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startMoney: 400
-  startLives: 20
+  Money: 400
+  Lives: 20
 --- !u!114 &1962896959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42223,7 +42223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   livesText: {fileID: 1453067577}
-  CoinsText: {fileID: 1914441786}
+  coinsText: {fileID: 1914441786}
 --- !u!1 &2025827036
 GameObject:
   m_ObjectHideFlags: 0

@@ -34,13 +34,13 @@ public class TowerMenuManager : MonoBehaviour
 
     private bool CheckBalance(int towerIndex)
     {
-        if (PlayerStats.Money < towerList[towerIndex].Cost)
+        if (PlayerStats.Main.Money < towerList[towerIndex].Cost)
         {
             Debug.Log("Can't Afford Building");
             return false;
         }
         
-        PlayerStats.Money -= towerList[towerIndex].Cost;
+        PlayerStats.Main.Money -= towerList[towerIndex].Cost;
         return true;
     }
 }

@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,7 +10,7 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
-        if (PlayerStats.lives <= 0)
+        if (PlayerStats.Main.Lives <= 0)
         {
             EndGameLose();
         }

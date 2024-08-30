@@ -1,18 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerUI: MonoBehaviour
 {
-    public Text livesText;
-    public Text CoinsText;
+    [SerializeField] private Text livesText;
+    [SerializeField] private Text coinsText;
 
 
     public void Update()
     {
-        livesText.text = PlayerStats.lives.ToString();
-        CoinsText.text = PlayerStats.Money.ToString();
+        livesText.text = PlayerStats.Main.Lives.ToString();
+        coinsText.text = PlayerStats.Main.Money.ToString();
 
     }
 }
