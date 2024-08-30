@@ -4,13 +4,11 @@ public class Waypoint : MonoBehaviour
 {
     public Vector3[] Waypoints;
 
-    public Transform startPoint;
-
-    public static Waypoint main;
+    public static Waypoint Main;
 
     private void Awake()
     {
-        main = this;    
+        Main = this;    
     }
 
     public Vector3 GetWaypointPosition(int index)

@@ -1,29 +1,29 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour, IDamageable
 {
-    public float maxHealth = 100;
-    public float CurrentHealth;
+    private float _maxHealth;
+    private Enemy _enemy;
 
-    public Image HealthBar;
+    [SerializeField] private Image healthBar;
 
-    void Start()
+    public void Start()
     {
-        CurrentHealth = maxHealth;
+        _enemy = GetComponent<Enemy>();
+        _maxHealth = _enemy.Health;
     }
 
     public void TakeDamage(float damage)
     {
-        CurrentHealth -= damage;
+        _enemy.Health -= damage;
 
-        HealthBar.fillAmount = CurrentHealth / maxHealth;
-
-        var EnemyPocket = GetComponent<Enemy>();
-
-        if (CurrentHealth <= 0) 
+        healthBar.fillAmount = _enemy.Health / _maxHealth;
+        
+        if (_enemy.Health <= 0) 
         {
-            EnemyPocket.MyWallet();
+            _enemy.MyWallet();
         }
     }
     

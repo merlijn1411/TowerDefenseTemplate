@@ -1,24 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public float MoveSpeed;
-
-    protected Vector2 direction;
-    public Vector3 CurrentPointPosition { get; private set; }
-
-    private Waypoint waypointManager;
+    private Enemy _enemy;
+    private Vector3 CurrentPointPosition { get; set; }
 
     private int _currentWaypointIndex;
 
 
     private void Start()
     {
-        waypointManager = FindAnyObjectByType<Waypoint>(); 
+        _enemy = GetComponent<Enemy>();
 
-        if (waypointManager == null)
+        if (Waypoint.Main == null)
         {
             Debug.LogError("Waypoint Script not found in the scene.");
         }
@@ -26,8 +20,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
-
-        CurrentPointPosition = waypointManager.GetWaypointPosition(_currentWaypointIndex);
+        CurrentPointPosition = Waypoint.Main.GetWaypointPosition(_currentWaypointIndex);
         Move();
         if (CurrentPointPositionReached())
         {
@@ -37,12 +30,12 @@ public class EnemyMovement : MonoBehaviour
 
     private void Move()
     {
-        transform.position = Vector3.MoveTowards(transform.position, CurrentPointPosition, MoveSpeed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, CurrentPointPosition, _enemy.MoveSpeed * Time.deltaTime);
     }
 
     private bool CurrentPointPositionReached()
     {
-        float distanceToNextpointPosition = (transform.position - CurrentPointPosition).magnitude;
+        var distanceToNextpointPosition = (transform.position - CurrentPointPosition).magnitude;
         if (distanceToNextpointPosition < 0.1f)
         {
             CurrentPointPosition = transform.position;
@@ -53,26 +46,13 @@ public class EnemyMovement : MonoBehaviour
 
     private void UpdateCurrentPointIndex()
     {
-        int lastWaypointIndex = waypointManager.Waypoints.Length - 1;
+        var lastWaypointIndex = Waypoint.Main.Waypoints.Length - 1;
         if (_currentWaypointIndex < lastWaypointIndex)
-        {
             _currentWaypointIndex++;
-        }
         else
         {
             Destroy(gameObject);
-            EndPointReached();
+            _enemy.TakeDamage();
         }
-    }
-
-    private void EndPointReached()
-    {
-        Enemy enemyDamage = GetComponent<Enemy>();
-
-        if(enemyDamage != null)
-        {
-            enemyDamage.TakeDamage();
-        }
-        
     }
 }

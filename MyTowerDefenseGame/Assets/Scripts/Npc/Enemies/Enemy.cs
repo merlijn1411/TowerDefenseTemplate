@@ -2,12 +2,15 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public float Health;
+    public float MoveSpeed;
+    
     public int Damage;
-    public int Worth;
+    public int Coins;
 
     public void MyWallet()
     {
-        PlayerStats.Main.Money += Worth;
+        PlayerStats.Main.Money += Coins;
         Destroy(gameObject);
     }
 
