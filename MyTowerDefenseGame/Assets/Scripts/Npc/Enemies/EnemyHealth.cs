@@ -1,11 +1,7 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EnemyHealth : MonoBehaviour
+public class EnemyHealth : MonoBehaviour, IDamageable
 {
     public float maxHealth = 100;
     public float CurrentHealth;
@@ -17,17 +13,19 @@ public class EnemyHealth : MonoBehaviour
         CurrentHealth = maxHealth;
     }
 
-    public void TakeDamage(float dmg)
+    public void TakeDamage(float damage)
     {
-        CurrentHealth -= dmg;
+        CurrentHealth -= damage;
 
         HealthBar.fillAmount = CurrentHealth / maxHealth;
 
-        Enemy EnemyPocket = GetComponent<Enemy>();
+        var EnemyPocket = GetComponent<Enemy>();
 
         if (CurrentHealth <= 0) 
         {
             EnemyPocket.MyWallet();
         }
     }
+    
+    
 }
