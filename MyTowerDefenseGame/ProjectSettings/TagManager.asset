@@ -5,12 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
-  - WayPoints
   - Projectile
-  - BuildPlatform
-  - ShopInteractable
-  - AcherT
-  - WizardT
+  - EndPoint
   layers:
   - Default
   - TransparentFX

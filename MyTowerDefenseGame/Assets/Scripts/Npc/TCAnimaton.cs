@@ -1,5 +1,6 @@
 using UnityEngine;
 
+//TC stands for Tower Character.
 public class TCAnimaton : NpcAnimationController
 {
     private void Start()

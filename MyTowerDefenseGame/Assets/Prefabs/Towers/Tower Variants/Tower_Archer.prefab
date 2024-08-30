@@ -221,12 +221,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5969bd12707054a458aa6ce475e25bb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 3.5
-  attackCooldown: 1
-  ArrowPrefab: {fileID: 6145333639873479387, guid: cbb5720ae82492644a6930e789b251b4, type: 3}
-  firePoint: {fileID: 341451224165637831}
-  target: {fileID: 0}
-  fireSource: {fileID: -8176132471930957578}
+  TowerData: {fileID: 11400000, guid: 5225b50831b170144a3a1b69fec60912, type: 2}
+  LastAttackTime: 0
+  Target: {fileID: 0}
+  FirePoint: {fileID: 341451224165637831}
 --- !u!82 &-8176132471930957578
 AudioSource:
   m_ObjectHideFlags: 0

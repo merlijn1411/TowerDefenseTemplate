@@ -287,6 +287,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b9495a87f72064d93d893a6a88092d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TowerData: {fileID: 0}
+  LastAttackTime: 0
+  Target: {fileID: 0}
+  FirePoint: {fileID: 0}
   towerList:
   - {fileID: 11400000, guid: 5225b50831b170144a3a1b69fec60912, type: 2}
   - {fileID: 11400000, guid: b281a0319dff81e42a368f11c799df39, type: 2}
@@ -615,7 +619,7 @@ GameObject:
   - component: {fileID: 5917785557121205851}
   m_Layer: 0
   m_Name: BuildPlatform
-  m_TagString: BuildPlatform
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

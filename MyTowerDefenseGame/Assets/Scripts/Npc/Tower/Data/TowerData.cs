@@ -11,4 +11,5 @@ public class TowerData : ScriptableObject
     
     public Sprite TowerIcon;
     public GameObject TowerPrefab;
+    public GameObject ProjectillePrefab;
 }
