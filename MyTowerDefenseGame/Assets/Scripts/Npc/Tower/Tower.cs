@@ -20,18 +20,12 @@ public class Tower : MonoBehaviour
         {
             var distanceToEnemy = Vector2.Distance(transform.position,enemy.transform.position);
 
-            if (distanceToEnemy < shortestDistance)
+            if (distanceToEnemy < attackRange)
             {
-                shortestDistance = distanceToEnemy;
                 nearestEnemy = enemy.transform;
+                return nearestEnemy;
             }
         }
-
-        if (nearestEnemy is not null && shortestDistance <= attackRange)
-        {
-            return nearestEnemy;
-        }
-
         return null;
     }
 }
