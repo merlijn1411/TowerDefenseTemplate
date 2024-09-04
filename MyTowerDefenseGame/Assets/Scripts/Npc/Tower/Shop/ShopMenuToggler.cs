@@ -1,82 +1,71 @@
 using UnityEngine;
 
-public class ShopDoor : MonoBehaviour
+public class ShopMenuToggler : MonoBehaviour
 {
-    public Canvas shopCanvas;
-    public GameObject uiPrefab;
+    private Canvas _shopCanvas;
 
-    private bool isShopOpen;
+    private bool _isShopOpen;
     private Color startcolor;
     private Renderer _renderer;
 
-
     private void Start()
     {
-        shopCanvas.enabled = false;
-        isShopOpen = false;
+        _shopCanvas = GetComponentInChildren<Canvas>();
         _renderer = GetComponent<Renderer>();
+        
+        CloseShop();
     }
     private void Update()
+    {
+        ShopToggle();
+    }
+
+    private void ShopToggle()
     {
         if (!Pause_Controller.GameisPaused)
         {
             if (Input.GetMouseButtonDown(0))
             {
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
 
                 if (Physics.Raycast(ray, out hit))
                 {
                     if (hit.collider.gameObject == gameObject)
                     {
-                        if (isShopOpen)
-                        {
+                        if (_isShopOpen)
                             CloseShop();
-                        }
                         else
-                        {
                             OpensHop();
-                        }
-                    }
-                    else if (isShopOpen)
-                    {
-                        CloseShop();
                     }
                 }
             }
         }
-        else if (Pause_Controller.GameisPaused)
-        {
-            Debug.Log("kan niet interacten");
-        }
-
     }
 
-    public void OpensHop()
+    private void OpensHop()
     {
-        isShopOpen = true;
-        shopCanvas.enabled = true;
+        _isShopOpen = true;
+        _shopCanvas.enabled = true;
     }
 
-    public void CloseShop()
+    private void CloseShop()
     {
-        isShopOpen = false;
-        shopCanvas.enabled = false;
+        _isShopOpen = false;
+        _shopCanvas.enabled = false;
     }
 
-    void OnMouseEnter()
+    private void OnMouseEnter()
     {
         if (!Pause_Controller.GameisPaused)
         {
             startcolor = _renderer.material.color;
             _renderer.material.color = Color.yellow;
         }
-        else if (Pause_Controller.GameisPaused)
-        {
-            Debug.Log("kan niet interacten");
-        }
-
+        else
+            _renderer.material.color = startcolor;
     }
+    
     private void OnMouseExit()
     {
         _renderer.material.color = startcolor;
