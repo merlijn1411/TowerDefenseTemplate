@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class PrestigeManager : MonoBehaviour
 {
     public Canvas LoseScreen;
 
@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
             EndGameLose();
         }
     }
-    public void EndGameLose()
+    private void EndGameLose()
     {
         Time.timeScale = 0f;
         LoseScreen.enabled = true;

@@ -1,10 +1,10 @@
-using System;
 using UnityEngine;
 
 public class ShopMenuToggler : MonoBehaviour
 {
     [SerializeField] private GameObject shopCanvas;
     
+    private GameSate _gameState;
     private Color _startColor;
     private Renderer _renderer;
 
@@ -20,22 +20,20 @@ public class ShopMenuToggler : MonoBehaviour
 
     private void ShopToggle()
     {
-        if (!Pause_Controller.GameisPaused)
+        if (Input.GetMouseButtonDown(0))
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                RaycastHit hit;
+            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
 
-                if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (hit.collider.gameObject == gameObject)
                 {
-                    if (hit.collider.gameObject == gameObject)
-                    {
-                        ShopDoorSwitch();
-                    }
+                    ShopDoorSwitch();
                 }
             }
         }
+        
     }
 
     private void ShopDoorSwitch()
@@ -45,7 +43,7 @@ public class ShopMenuToggler : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        if (Pause_Controller.GameisPaused)
+        if (_gameState == GameSate.Paused)
         {
             return;
         }
