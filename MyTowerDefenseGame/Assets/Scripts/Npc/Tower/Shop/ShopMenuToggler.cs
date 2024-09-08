@@ -1,19 +1,17 @@
+using System;
 using UnityEngine;
 
 public class ShopMenuToggler : MonoBehaviour
 {
-    private Canvas _shopCanvas;
-
-    private bool _isShopOpen;
-    private Color startcolor;
+    [SerializeField] private GameObject shopCanvas;
+    
+    private Color _startColor;
     private Renderer _renderer;
 
     private void Start()
     {
-        _shopCanvas = GetComponentInChildren<Canvas>();
         _renderer = GetComponent<Renderer>();
-        
-        CloseShop();
+        _startColor = _renderer.material.color;
     }
     private void Update()
     {
@@ -33,41 +31,30 @@ public class ShopMenuToggler : MonoBehaviour
                 {
                     if (hit.collider.gameObject == gameObject)
                     {
-                        if (_isShopOpen)
-                            CloseShop();
-                        else
-                            OpensHop();
+                        ShopDoorSwitch();
                     }
                 }
             }
         }
     }
 
-    private void OpensHop()
+    private void ShopDoorSwitch()
     {
-        _isShopOpen = true;
-        _shopCanvas.enabled = true;
-    }
-
-    private void CloseShop()
-    {
-        _isShopOpen = false;
-        _shopCanvas.enabled = false;
+        shopCanvas.SetActive(!shopCanvas.activeSelf);
     }
 
     private void OnMouseEnter()
     {
-        if (!Pause_Controller.GameisPaused)
+        if (Pause_Controller.GameisPaused)
         {
-            startcolor = _renderer.material.color;
-            _renderer.material.color = Color.yellow;
+            return;
         }
-        else
-            _renderer.material.color = startcolor;
+        
+        _renderer.material.color = Color.yellow;
     }
-    
+
     private void OnMouseExit()
     {
-        _renderer.material.color = startcolor;
+        _renderer.material.color = _startColor;
     }
 }

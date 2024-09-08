@@ -178,7 +178,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1324903755795556130
 RectTransform:
   m_ObjectHideFlags: 0
@@ -287,10 +287,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b9495a87f72064d93d893a6a88092d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TowerData: {fileID: 0}
-  LastAttackTime: 0
-  Target: {fileID: 0}
-  FirePoint: {fileID: 0}
   towerList:
   - {fileID: 11400000, guid: 5225b50831b170144a3a1b69fec60912, type: 2}
   - {fileID: 11400000, guid: b281a0319dff81e42a368f11c799df39, type: 2}
@@ -638,7 +634,7 @@ Transform:
   m_Children:
   - {fileID: 1324903755795556130}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5917785557121205847
 SpriteRenderer:
@@ -704,8 +700,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 339aef61a12f70e408ea1ba3a4ed8def, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shopCanvas: {fileID: 1324903755795556135}
-  uiPrefab: {fileID: 1324903755795556131}
+  shopCanvas: {fileID: 1324903755795556131}
 --- !u!65 &5917785557121205851
 BoxCollider:
   m_ObjectHideFlags: 0
