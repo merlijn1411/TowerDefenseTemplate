@@ -6,5 +6,5 @@
 <a href="https://github.com/merlijn1411/TowerDefenseTemplate/wiki" class="button">Wiki</a>
 
  <text>Here is the link for the school acceptance criteria</text>
-<a href="https://github.com/merlijn1411/TowerDefenseTemplate/wiki/Tower-Defense-School-Acceptatiecriteria" class="button">Wiki</a>
+<a href="https://github.com/merlijn1411/TowerDefenseTemplate/wiki/Tower-Defense-School-Acceptatiecriteria" class="button">School</a>
 </div>
