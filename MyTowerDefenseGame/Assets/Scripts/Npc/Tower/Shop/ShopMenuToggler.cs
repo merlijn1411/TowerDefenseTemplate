@@ -20,20 +20,14 @@ public class ShopMenuToggler : MonoBehaviour
 
     private void ShopToggle()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
+        if (GameManager.Instance.gameState != GameSate.Playing) return;
+        if (!Input.GetMouseButtonDown(0)) return;
+        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit))
-            {
-                if (hit.collider.gameObject == gameObject)
-                {
-                    ShopDoorSwitch();
-                }
-            }
-        }
-        
+        if (!Physics.Raycast(ray, out hit)) return;
+        if (hit.collider.gameObject == gameObject)
+            ShopDoorSwitch();
     }
 
     private void ShopDoorSwitch()
@@ -43,11 +37,9 @@ public class ShopMenuToggler : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        if (_gameState == GameSate.Paused)
-        {
+        if (GameManager.Instance.gameState != GameSate.Playing)
             return;
-        }
-        
+            
         _renderer.material.color = Color.yellow;
     }
 

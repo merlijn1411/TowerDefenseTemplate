@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private GameSate gameState = GameSate.NotSet;
+    public GameSate gameState = GameSate.NotSet;
     
     public static GameManager Instance { get; private set; }
     
@@ -13,23 +13,38 @@ public class GameManager : MonoBehaviour
     { 
         if (Instance != null && Instance != this) Destroy(this); 
         else Instance = this;
+
+        gameState = GameSate.Playing;
     }
 
-    public void InMainMenu()
+    public void ChangeGameState(string stateIndex)
     {
-        gameState = GameSate.MainMenu;
-        GameStateChangedEvent?.Invoke(this, gameState);
+        // gameState = stateIndex switch
+        // {
+        //     "Playing" => GameSate.Playing, 
+        //     "Pausing" => GameSate.Paused,
+        //     "GoToMenu" => GameSate.MainMenu,
+        //     _ => gameState
+        // };
+
+        switch (stateIndex)
+        {
+            case "Playing":
+                gameState = GameSate.Playing;
+                Time.timeScale = 1f;
+                break;
+            case "Pausing":
+                gameState = GameSate.Paused;
+                Time.timeScale = 0f;
+                break;
+            case "GoToMenu":
+                gameState = GameSate.MainMenu;
+                Time.timeScale = 1f;
+                break;
+        }
+
+        GameStateChangedEvent?.Invoke(Instance, gameState);
     }
     
-    public void PlayGame()
-    {
-        gameState = GameSate.Playing;
-        GameStateChangedEvent?.Invoke(this,gameState);
-    }
     
-    public void PauseGame()
-    {
-        gameState = GameSate.Paused;
-        GameStateChangedEvent?.Invoke(this,gameState);
-    }
 }

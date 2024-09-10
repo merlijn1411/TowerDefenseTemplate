@@ -2,23 +2,19 @@ using UnityEngine;
 
 public class PrestigeManager : MonoBehaviour
 {
-    public Canvas LoseScreen;
+     [SerializeField] private GameObject prestigeScreen;
+     [SerializeField] private GameObject[] prestigeTextImage;
 
-    private void Start()
-    {
-        LoseScreen.enabled = false;
-    }
-    private void Update()
-    {
-        if (PlayerStats.Main.Lives <= 0)
-        {
-            EndGameLose();
-        }
-    }
-    private void EndGameLose()
+    public void PrestigeRate(bool won)
     {
         Time.timeScale = 0f;
-        LoseScreen.enabled = true;
+        prestigeScreen.SetActive(true);
+
+        if (won)
+            prestigeTextImage[0].SetActive(true);
+        else
+            prestigeTextImage[1].SetActive(true);
+        
     }
     
 }
