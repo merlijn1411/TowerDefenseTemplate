@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class WaveSpawner2 : MonoBehaviour
@@ -15,15 +16,13 @@ public class WaveSpawner2 : MonoBehaviour
 
     public float waveDelay;
     
-
-    [SerializeField]private Canvas winScreen;
     [SerializeField]private Text waveNumberT;
-
     [SerializeField]private GameObject startButton;
+
+    public UnityEvent OnNoEnemiesLeft;
 
     public void Start()
     {
-        winScreen.enabled = false;
         startButton.SetActive(true);
         waveNumberT.text = currentWaveNumber + "/" + maxWave.ToString();
         
@@ -59,7 +58,7 @@ public class WaveSpawner2 : MonoBehaviour
         waveNumberT.text = currentWaveNumber + "/" + maxWave.ToString();
 
         if (currentWaveNumber == maxWave && GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
-            StopWaves();
+            OnNoEnemiesLeft.Invoke();
 
         if (currentWaveNumber == maxWave)
             startButton.SetActive(false);
@@ -118,11 +117,7 @@ public class WaveSpawner2 : MonoBehaviour
         }
         return false;
     }
-
-    private void StopWaves()
-    {
-        winScreen.enabled = true;
-    }
+    
     private void ResetTimer()
     {
         waveDelay = 15;
