@@ -197,3 +197,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8
   damage: 25
+  mass: 10
+  followPath: 1
