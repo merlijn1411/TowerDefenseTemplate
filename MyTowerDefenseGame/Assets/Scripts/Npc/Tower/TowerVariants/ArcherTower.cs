@@ -1,10 +1,15 @@
 using UnityEngine;
 using UnityEditor;
-public class ArcherTower : Tower 
+public class ArcherTower : Tower
 {
+    [SerializeField] private float trajectoryMaxHeight;
+    [SerializeField] private AnimationCurve animationCurve;
+    [SerializeField] private AnimationCurve axisCorrectionAnimationCurve;
+    
     private TCAnimaton _tCAnimaton;
-
+    
     private AudioSource _shootAudioSource;
+    
 
     private void OnDrawGizmos()
     {
@@ -36,9 +41,10 @@ public class ArcherTower : Tower
     
     private void Shoot()
     {
-        var projectille = Instantiate(TowerData.ProjectillePrefab, FirePoint.position, FirePoint.rotation);
-        var projectilleScript = projectille.GetComponent<Arrow>();
+        var projectile = Instantiate(TowerData.ProjectillePrefab, transform.position, Quaternion.identity);
+        var projectileScript = projectile.GetComponent<Arrow>();
 
-        projectilleScript?.Seek(Target);
+        projectileScript.InitializeProjectile(Target, TowerData.ProjectileSpeed, trajectoryMaxHeight);
+        projectileScript.InitializeAnimationCurve(animationCurve, axisCorrectionAnimationCurve);
     }
 }

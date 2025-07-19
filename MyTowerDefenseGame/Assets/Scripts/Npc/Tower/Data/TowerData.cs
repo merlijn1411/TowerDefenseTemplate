@@ -5,6 +5,7 @@ public class TowerData : ScriptableObject
 {
     public string TowerName;
     public int Cost;
+    public float ProjectileSpeed;
 
     public float AttackRange;
     public float AttackCooldown;

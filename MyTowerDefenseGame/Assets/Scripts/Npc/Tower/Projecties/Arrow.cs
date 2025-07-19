@@ -1,18 +1,13 @@
-using UnityEngine;
-
 public class Arrow : ProjectileCurving
 {
-    private void Update()
+    protected new void Start()
     {
-        SeekTarget();
-        PointArrived();
+        base.Start();
     }
     
-   
-    public void Seek(Vector3 newTarget, float maxHeight)
+    protected new void Update()
     {
-        Target = newTarget;
-        projectileMaxHeight = maxHeight;
+        base.Update();
     }
     
 }
