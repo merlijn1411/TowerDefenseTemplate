@@ -1,5 +1,5 @@
-using UnityEngine;
 using UnityEditor;
+using UnityEngine;
 
 public class WizardTower : Tower
 {
@@ -30,9 +30,9 @@ public class WizardTower : Tower
     
     private void Shoot()
     {
-        var projectille = Instantiate(TowerData.ProjectillePrefab, FirePoint.position, FirePoint.rotation);
-        var projectilleScript = projectille.GetComponent<Fireball>();
+        var projectile = Instantiate(TowerData.ProjectillePrefab, FirePoint.position, FirePoint.rotation);
+        var projectileScript = projectile.GetComponent<Fireball>();
 
-        projectilleScript?.Seek(Target);
+        projectileScript.Seek(Target.position);
     }
 }
